@@ -1,0 +1,545 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1C;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Typography */
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    color: black;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+nav {
+    background-color: transparent;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a:hover {
+    color: #0070ff;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #0070ff;
+    width: 0;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropbtn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0070ff;
+    border: none;
+    background: rgba(255, 255, 255, 0.681);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4.5rem;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    font-family: 'Bebas Neue', sans-serif;
+    color: black;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 140, 255, 0.5);
+    color: white;
+}
+
+.sponsorship-form {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+ /* Centering the form */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%); /* Move slightly upward */
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+
+.sponsorship-form h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+.sponsorship-form label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: #333;
+}
+
+.sponsorship-form input,
+.sponsorship-form textarea {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+}
+
+.sponsorship-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.sponsorship-form button {
+    width: 100%;
+    background-color: #0070ff;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sponsorship-form button:hover {
+    background-color: #0056cc;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    color: green;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+/* Image Container */
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2.5rem auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#image-track {
+    display: flex;
+    position: relative;
+    z-index: -1;
+}
+
+#image-track > .image {
+    width: 195px;
+    height: 90px;
+    opacity: 1;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.popup {
+    display: none; /* Hide the popup by default */
+    position: fixed;
+    top: 150px;
+    left: 15px;
+    color: black;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.7s forwards; /* Add fadeIn animation */
+}
+
+
+#popup h1 {
+    position: fixed; /* Keep the h1 in place */
+    top: 150px; /* Adjust top as needed */
+    left: 15px; /* Adjust left as needed */
+    font-size: 1.5rem; /* Adjust the font size if needed */
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Learn More Section */
+.learn-more {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #333;
+}
+
+.learn-more p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.learn-more button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070ff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    backdrop-filter: blur(8px); /* Add background blur */
+}
+
+.modal-content {
+    background-color: transparent; /* Remove white background */
+    margin: 10% auto; /* Centered */
+    padding: 20px;
+    border: none; /* Remove border */
+    width: 80%; /* Adjust to fit */
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: none; /* Remove shadow */
+}
+
+
+/* Add an active class to trigger modal visibility */
+.modal.show {
+    display: block; /* Show the modal */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: -190px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-area {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	text-align: center;
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+	font-size: 50px;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 2px #fff;
+}
+.wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.round {
+    position: absolute;
+    width: 8px; /* Smaller size */
+    height: 8px; /* Smaller size */
+    border-radius: 50%;
+    background-color: #01b4f9;
+    border: 3px solid rgba(1, 180, 249, 0.5); /* Reduced opacity for a softer look */
+    opacity: 0;
+    box-shadow: 0 0 50px rgba(1, 180, 249, 0.3), 0 0 10px rgba(1, 180, 249, 0.3);
+    animation: animate 6s linear infinite, ani-2 4s linear infinite; /* Slower animation */
+}
+
+.round:nth-child(1) {
+	left: 5%;
+	animation-delay: 0.5s;
+}
+.round:nth-child(2) {
+	left: 65%;
+	animation-delay: 1s;
+}
+.round:nth-child(3) {
+	left: 90%;
+	animation-delay: 1.5s;
+}
+.round:nth-child(4) {
+	left: 18%;
+	animation-delay: 2s;
+}
+.round:nth-child(5) {
+	left: 93%;
+	animation-delay: 2.5s;
+}
+.round:nth-child(6) {
+	left: 52%;
+	animation-delay: 3s;
+}
+.round:nth-child(7) {
+	left: 65%;
+	animation-delay: 3.5s;
+}
+.round:nth-child(8) {
+	left: 35%;
+	animation-delay: 4s;
+}
+.round:nth-child(9) {
+	left: 85%;
+	animation-delay: 4.5s;
+}
+.round:nth-child(10) {
+	left: 45%;
+	animation-delay: 5s;
+}
+.round:nth-child(11) {
+	left: 36%;
+	animation-delay: 5.5s;
+}
+.round:nth-child(12) {
+	left: 72%;
+	animation-delay: 6s;
+}
+.round:nth-child(13) {
+	left: 14%;
+	animation-delay: 6.5s;
+}
+.round:nth-child(14) {
+	left: 70%;
+	animation-delay: 7s;
+}
+
+
+/* Modify the keyframes for smoother, slower movement */
+@keyframes animate {
+    0% {
+        top: 0;
+        opacity: 0.5; /* Start with lower opacity */
+    }
+    20% {
+        top: 20%;
+        opacity: 0.4;
+    }
+    40% {
+        top: 40%;
+        opacity: 0.3;
+    }
+    60% {
+        top: 60%;
+        opacity: 0.2;
+    }
+    80% {
+        top: 80%;
+        opacity: 0.1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0; /* Fade out completely */
+    }
+}
+
+@keyframes ani-2 {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5); /* Smaller scale to keep it subtle */
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+    nav a {
+        font-size: 1.1rem;
+    }
+    button {
+        font-size: 0.9rem;
+    }
+    #popup {
+        width: 90%; /* Adjust width for medium screens */
+        padding: 0.9rem;
+    }
+    #popup h1 {
+        margin-top: 500px !important; /* Move h1 further down on smaller screens */
+        margin-left: -298px !important;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.4rem;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+    button {
+        font-size: 0.8rem;
+    }
+    #popup {
+        width: 95%; /* Max width on small screens */
+        padding: 0.75rem;
+    }
+    #popup h1 {
+        margin-top: 120px !important; /* Move h1 further down on smaller screens */
+        margin-left: 12px !important;
+        font-size: 1.6rem;
+        margin: 0; /* Remove margin to keep it fixed */
+    }
+
+    body {
+        overflow: hidden; /* Disable scrolling */
+    }
+    
+    html {
+        touch-action: none; /* Prevent touch scrolling */
+        overflow: hidden; /* Disable scrolling for the whole page */
+    }
+
+    .sponsorship-form {
+        width: 90%; /* Reduce width for mobile */
+        padding: 1rem; /* Adjust padding for smaller screens */
+        max-width: 300px; /* Set a maximum width */
+        top: 40%; /* Adjust vertical position */
+        transform: translate(-50%, -40%); /* Adjust translate to fit better */
+    }
+
+    .sponsorship-form h3 {
+        font-size: 1.4rem; /* Smaller heading size */
+    }
+
+    .sponsorship-form label,
+    .sponsorship-form input,
+    .sponsorship-form textarea {
+        font-size: 0.9rem; /* Slightly smaller font size */
+    }
+
+    .sponsorship-form button {
+        padding: 0.75rem; /* Adjust button size */
+        font-size: 0.9rem; /* Smaller font size for button */
+    }
+}

@@ -1,0 +1,263 @@
+
+/* General reset and body styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    overflow: hidden; /* Hides scrollbar */
+}
+
+body {
+    font-family: sans-serif;
+    position: relative;
+    background-color: black;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('imgs/AIRobot.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    z-index: -2;
+    filter: blur(15px);
+    background-blend-mode: darken;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(19, 19, 105, 0.61);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+#welcome {
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+    margin-top: 1px;
+}
+
+
+/* Navigation Styles */
+/* Link styling */
+
+a {
+    font-family: 'Bebas Neue';
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    z-index: 2;
+    user-select: none;
+}
+
+
+/* Navigation Styles */
+nav {
+    background-color: transparent;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a:hover {
+    color: #0070ff;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #0070ff;
+    width: 0;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070ff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+    left: calc(50VW - 90px);
+    top: calc(-20VW);
+}
+
+.dropbtn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; /* Same as first snippet */
+    font-weight: bold;
+    color: #0070ff;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4.5rem;
+    min-width: 200px; /* Ensure there's enough width */
+    padding: 10px;
+    z-index: 9999;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    color: black; /* Set the color of the dropdown links */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 140, 255, 0.5);
+    color: white;
+}
+
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.logo {
+    width: 15%;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Contact info styling */
+#contact-info {
+    background-color: rgba(255, 255, 255, 0.699);
+    padding: 20px;
+    text-align: center;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 80px;
+    z-index: 2;
+}
+
+#contact-info h2 {
+    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Header styles */
+header h1 {
+    font-family: 'Coiny', sans-serif;
+    font-size: 30px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 150s linear infinite;
+    opacity: 0.9;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
+
+header p {
+    color: white;
+    font-family: 'Coiny', sans-serif;
+}
+
+/* Additional styles for headings and paragraphs */
+h2 {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    color: black;
+    padding: 24px;
+    border-radius: 50px;
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    z-index: 2;
+}
+
+p {
+    font-family: "Coiny";
+    font-size: 20px;
+    z-index: 5;
+    position: relative;
+}

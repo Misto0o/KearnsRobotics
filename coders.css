@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+  overflow: hidden;
+  animation: backgroundChange 10s infinite alternate;
+}
+
+@keyframes backgroundChange {
+  0% { background-color: #8abce8c5; }
+  50% { background-color: #e6f7ff; }
+  100% { background-color: #c7e1f758; }
+}
+
+.container {
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  padding: 20px;
+  margin: 0; /* Reset margin */
+  transform: translateY(-40px); /* Adjust to move the entire container up */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex; /* Use flexbox for better alignment */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+
+.kearns-image {
+  width: 200px;
+  height: auto;
+  animation: pop 0.6s forwards;
+  margin-bottom: 20px; /* Add space below the image */
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 20px 0; /* Adjusted margin to avoid conflict with other elements */
+  animation: slideIn 1s forwards;
+  transform: translateY(0); /* Remove any upward adjustments */
+  position: static;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px; /* Adjusted margin for spacing */
+  position: static; /* Remove relative positioning to stop it from moving with h1 */
+}
+
+
+.team-member {
+  background-color: #fff;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: calc(25% - 40px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.5s forwards, bounceIn 0.5s forwards;
+  opacity: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.member-image {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  left: -12px;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: transparent;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 0 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a:hover {
+  color: #0070ff;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: #0070ff;
+  width: 0;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Button Styles */
+button {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #0070ff;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown Styles */
+.dropdown {
+  display: inline-block;
+  position: absolute; /* Changed to absolute */
+  top: 10px; /* Adjust the top margin for spacing */
+  left: 10px; /* Adjust the left margin for spacing */
+  z-index: 9999;
+}
+
+.dropbtn {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0070ff;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 9999;
+}
+
+
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  left: 52%;
+  transform: translateX(-50%);
+  top: 4.5rem;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content a {
+  font-family: 'Bebas Neue', sans-serif;
+  color: black;
+  font-size: 1.2rem; /* Increase font size */
+  padding: 1rem 1.5rem; /* Increase padding */
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(0, 140, 255, 0.5);
+  color: white;
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 480px) {
+  .container img{
+    width: 122px;
+    margin-left: 250px;
+    margin-top: -5px;
+    top: -12px;
+  }
+  .team-container {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: -190px; /* More space to prevent overlap with h1 */
+  }
+
+  .team-member {
+    width: 40%;
+    margin: 10px 5px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    position: relative; /* Add relative positioning */
+    top: -190px !important; /* Adjusted top to move the h1 up */
+    margin-bottom: 20px; /* Ensure spacing below h1 */
+    left: -75px;
+  }
+}
+  nav a {
+    font-size: 1rem;
+  }
+
+  .member-image {
+    width: 60px;
+  }

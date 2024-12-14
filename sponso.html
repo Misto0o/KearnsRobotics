@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="sponso.css">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Kearns Robotics" />
+    <meta property="og:description" content="Bringing Change for a Better Tomorrow!" />
+    <meta property="og:image" content='imgs/kearns.png' />
+    <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://kearnsrobotics.netlify.app/sponso" />
+    <!-- Replace with actual URL -->
+    <meta property="og:type" content="website"/>
+    <title>Sponsorships</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+    </div>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Resources</button>
+            <div class="dropdown-content">
+                <a href="index.html">Homepage</a>
+                <a href="about.html">About us</a>
+                <a href="team.html">Team Members</a>
+                <a href="mechs.html">Mechanicals</a>
+                <a href="coders.html">Coder Team</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="popup" class="popup">
+        <h1>Meet our Sponsorships!</h1>
+    </div>
+
+    <div class="image-container">
+        <div id="image-track">
+            <img class="image" src="imgs/Guilford-County-Schools.png" draggable="false" />
+            <img class="image" src="imgs/image1.png" draggable="false" alt="Comming Soon" />
+            <img class="image" src="imgs/image2.png" draggable="false" alt="Comming Soon"/>
+            <img class="image" src="imgs/image3.png" draggable="false" alt="Comming Soon"/>
+            <img class="image" src="imgs/image4.png" draggable="false" alt="Comming Soon"/>
+            <img class="image" src="imgs/image5.png" draggable="false" alt="Comming Soon"/>
+        </div>
+    </div>
+
+    <!-- Learn More Section -->
+    <section class="learn-more">
+        <h2>Why Become a Sponsor?</h2>
+        <p>Your support helps us achieve our goals. Funding for our parts our events too!</p>
+        <button id="openFormBtn">Become a Sponsor</button>
+    </section>
+
+    <!-- Sponsorship Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Sponsorship Form -->
+            <div class="sponsorship-form">
+                <form id="sponsorshipForm">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="company">Company Name:</label>
+                    <input type="text" id="company" name="company" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Why would you like to become a sponsor?" required></textarea>
+
+                    <button type="submit">Submit Sponsorship Request</button>
+                    <div class="success-message" id="successMessage">Your sponsorship request has been submitted successfully!</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("UvBBOcqj5ND-MANbY"); // Replace with your public key
+        })();
+    </script>
+    <script src="sponso.js"></script>
+</body>
+</html>

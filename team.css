@@ -1,0 +1,329 @@
+/* General reset and body styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    font-family: sans-serif;
+    position: relative; /* Positioning context for the pseudo-elements */
+}
+
+header h1 {
+    font-family: 'Coiny', sans-serif;
+    font-size: 40px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: rainbow-animation 150s linear infinite;
+    opacity: 0.9;
+    text-align: center; /* Center align text */
+    margin: 0;
+    position: relative;
+    bottom: 20px; /* Adjust spacing */
+    opacity: 0; /* Start invisible */
+    animation: pop-up 0.9s forwards; /* Add animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes pop-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Resources section */
+.resources {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for resources */
+    text-align: center; /* Center the content */
+}
+
+.resources p {
+    font-size: 1em;
+    color: #666; /* Softer color for resources text */
+}
+
+/* Adjusted team container size */
+.team-container {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    padding: 20px;
+    max-width: 900px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.team-member {
+    display: flex; /* Use flexbox for row layout */
+    align-items: center; /* Center items vertically */
+    background-color: #ffffff; /* Background color */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    margin: 20px 0; /* Space between rows */
+    padding: 20px; /* Padding inside the boxes */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+.team-member img {
+    border-radius: 50%; /* Circular image */
+    max-width: 80px; /* Fixed width for images */
+    height: auto;
+    margin-right: 50px; /* Space between image and text */
+}
+
+.team-member-content {
+    display: flex; /* Ensure content area is flexbox */
+    flex-direction: column; /* Stack text vertically */
+}
+
+h2 {
+    font-size: 1.5em; /* Slightly larger heading */
+    margin: 10px 0 5px; /* Space above and below the heading */
+    color: #333; /* Darker color for headings */
+    line-height: 1.2; /* Improve spacing between lines */
+    position: relative; /* Set position to relative */
+    left: -43px; /* Now the left property will work */
+}
+
+h3 {
+    font-size: 1.2em; /* Slightly larger heading */
+    margin: 10px 0 5px; /* Space above and below the heading */
+    color: #333; /* Darker color for headings */
+    line-height: 1.2; /* Improve spacing between lines */
+    text-align: center; /* Center the text */
+    position: relative; /* Set position to relative */
+    left: -20px; /* Now the left property will work */
+}
+
+p {
+    margin: 23px 0; /* Increased spacing for paragraphs */
+    color: #666; /* Softer color for paragraph text */
+    font-size: 20px; /* Standard font size for paragraph text */
+    line-height: 1.5; /* Improved line height for readability */
+    font-family: 'Bebas Neue';
+}
+
+/* Navigation Styles */
+nav {
+    background-color: transparent;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  nav a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    margin: 0 1rem;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  nav a:hover {
+    color: #0070ff;
+  }
+  
+  nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #0070ff;
+    width: 0;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Button Styles */
+  button {
+    margin-top: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0070ff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Dropdown Styles */
+  .dropdown {
+    display: inline-block;
+    position: absolute; /* Changed to absolute */
+    top: 10px; /* Adjust the top margin for spacing */
+    left: 10px; /* Adjust the left margin for spacing */
+    z-index: 9999;
+  }
+  
+  .dropbtn {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0070ff;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 9999;
+  }
+  
+  
+  .dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    left: 52%;
+    transform: translateX(-50%);
+    top: 4.5rem;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .dropdown-content a {
+    font-family: 'Bebas Neue', sans-serif;
+    color: black;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: rgba(0, 140, 255, 0.5);
+    color: white;
+  }
+
+
+.intro {
+    position: absolute; /* Positioning to center it */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    opacity: 1; /* Fully visible */
+    transition: opacity 1s ease; /* Transition for fading */
+}
+
+.intro.fade-out {
+    opacity: 0; /* Faded out */
+}
+
+.content {
+    opacity: 0; /* Start as invisible */
+    transition: opacity 1s ease; /* Transition for fading */
+}
+
+.content.visible {
+    opacity: 1; /* Fully visible */
+}
+
+.final-message {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Bebas Neue', cursive; /* Or your desired font */
+    /* Add any additional styling as needed */
+    font-family: 'Coiny', sans-serif;
+    font-size: 15px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817)); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: rainbow-animation 150s linear infinite;
+    opacity: 0.9;
+    text-align: center; /* Center align text */
+    margin: 0;
+    position: relative;
+    bottom: 20px; /* Adjust spacing */
+    opacity: 0; /* Start invisible */
+    animation: pop-up 0.9s forwards; /* Add animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Utilities for Mobile and Tablet Users */
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column; /* Stack member details vertically */
+        align-items: center; /* Center align images and text */
+        text-align: center; /* Center text in the member section */
+    }
+
+    .team-member img {
+        margin-bottom: 10px; /* Space below images */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .team-member h2, /* Adjust h2 styling */
+    .team-member h3 { /* Assuming roles are in h3 elements */
+        margin-top: 10px !important; /* Add space above h2/h3 */
+        font-size: 1.5em !important; /* Adjust h2/h3 font size */
+    }
+
+    .dropdown-content {
+        min-width: 100%; /* Full width dropdown on mobile */
+        font-size: 18px; /* Smaller font size for dropdown */
+    }
+
+    p {
+        font-size: 18px; /* Adjust paragraph size for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member h2, /* Adjust h2 styling */
+    .team-member h3 { /* Assuming roles are in h3 elements */
+        font-size: 1.2em !important; /* Further adjust h2/h3 font size for very small screens */
+        margin-top: 5px !important; /* Adjust spacing above */
+    }
+
+    header h1 {
+        font-size: 24px; /* Even smaller heading for very small screens */
+    }
+
+    nav a {
+        font-size: 18px; /* Further reduce nav font size */
+    }
+
+    .final-message {
+        font-size: 12px; /* Adjust final message size for small screens */
+    }
+
+    p {
+        font-size: 16px; /* Smaller paragraph text for mobile */
+    }
+}
