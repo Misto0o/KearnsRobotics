@@ -1,4 +1,4 @@
-/* General reset and body styling */
+/* General Reset and Body Styling */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,324 +6,261 @@
 }
 
 html, body {
-    height: 100%; /* Ensure full height */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    background-color: #f4f4f4; /* Subtle background */
+    line-height: 1.5;
 }
 
-body {
-    font-family: sans-serif;
-    position: relative; /* Positioning context for the pseudo-elements */
-}
+    /* Header and Navigation */
+    header.navbar {
+        display: flex;
+        background-color: #161b22;
+        padding: 15px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        gap: 2rem;
+        align-items: center;
+    }
 
+    header h1 {
+        font-size: 1.8rem;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .navbar a {
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .navbar a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #1434A4;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar a:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .navbar-item:hover {
+        color: #1434A4 !important;
+    }
+
+    .navbar-item {
+        color: white !important;
+    }
+
+    .navbar-burger{
+        color: white !important;
+    }
+
+    /* Header content styling */
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 20px;
+        padding-left: 20px;
+    }
+
+/* Header styles */
 header h1 {
     font-family: 'Coiny', sans-serif;
-    font-size: 40px;
-    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817)); 
+    font-size: 30px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817));
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;  
+    -webkit-text-fill-color: transparent;
     animation: rainbow-animation 150s linear infinite;
     opacity: 0.9;
-    text-align: center; /* Center align text */
-    margin: 0;
-    position: relative;
-    bottom: 20px; /* Adjust spacing */
-    opacity: 0; /* Start invisible */
-    animation: pop-up 0.9s forwards; /* Add animation */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
-@keyframes pop-up {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
     }
 }
 
-/* Resources section */
-.resources {
-    padding: 20px;
-    background-color: #f9f9f9; /* Light background for resources */
-    text-align: center; /* Center the content */
+.navbar-burger {
+    position: absolute; /* Allows precise positioning */
+    left: -15px; /* Adjust distance from the left edge */
+    width: 90px;
+    height: auto;
+    color: white !important;
 }
 
-.resources p {
-    font-size: 1em;
-    color: #666; /* Softer color for resources text */
-}
-
-/* Adjusted team container size */
+/* Team Container */
 .team-container {
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
     padding: 20px;
-    max-width: 900px; /* Set a maximum width for the container */
-    margin: 0 auto; /* Center the container */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Team Member Cards */
 .team-member {
-    display: flex; /* Use flexbox for row layout */
-    align-items: center; /* Center items vertically */
-    background-color: #ffffff; /* Background color */
-    border-radius: 12px; /* Slightly rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-    margin: 20px 0; /* Space between rows */
-    padding: 20px; /* Padding inside the boxes */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    margin-top: 12px;
 }
 
 .team-member:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .team-member img {
-    border-radius: 50%; /* Circular image */
-    max-width: 80px; /* Fixed width for images */
-    height: auto;
-    margin-right: 50px; /* Space between image and text */
-}
-
-.team-member-content {
-    display: flex; /* Ensure content area is flexbox */
-    flex-direction: column; /* Stack text vertically */
-}
-
-h2 {
-    font-size: 1.5em; /* Slightly larger heading */
-    margin: 10px 0 5px; /* Space above and below the heading */
-    color: #333; /* Darker color for headings */
-    line-height: 1.2; /* Improve spacing between lines */
-    position: relative; /* Set position to relative */
-    left: -43px; /* Now the left property will work */
-}
-
-h3 {
-    font-size: 1.2em; /* Slightly larger heading */
-    margin: 10px 0 5px; /* Space above and below the heading */
-    color: #333; /* Darker color for headings */
-    line-height: 1.2; /* Improve spacing between lines */
-    text-align: center; /* Center the text */
-    position: relative; /* Set position to relative */
-    left: -20px; /* Now the left property will work */
-}
-
-p {
-    margin: 23px 0; /* Increased spacing for paragraphs */
-    color: #666; /* Softer color for paragraph text */
-    font-size: 20px; /* Standard font size for paragraph text */
-    line-height: 1.5; /* Improved line height for readability */
-    font-family: 'Bebas Neue';
-}
-
-/* Navigation Styles */
-nav {
-    background-color: transparent;
-    padding: 1rem 0;
-    text-align: center;
-  }
-  
-  nav a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-    margin: 0 1rem;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  nav a:hover {
-    color: #0070ff;
-  }
-  
-  nav a::after {
-    content: '';
     display: block;
-    height: 3px;
-    background-color: #0070ff;
-    width: 0;
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-  
-  nav a:hover::after {
-    width: 100%;
-  }
-  
-  /* Button Styles */
-  button {
-    margin-top: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #0070ff;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Dropdown Styles */
-  .dropdown {
-    display: inline-block;
-    position: absolute; /* Changed to absolute */
-    top: 10px; /* Adjust the top margin for spacing */
-    left: 10px; /* Adjust the left margin for spacing */
-    z-index: 9999;
-  }
-  
-  .dropbtn {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    width: 150px; /* Consistent width for visibility */
+    height: auto; /* Maintain natural aspect ratio */
+    margin: 20px auto 0;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Importing Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Typography for Team Members */
+.team-member h2 {
+    font-family: 'Lora', serif; /* Elegant serif font for headings */
+    font-size: 2rem; /* Larger heading size */
     font-weight: bold;
-    color: #0070ff;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 9999;
-  }
-  
-  
-  .dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    white-space: nowrap;
-    z-index: 1;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    left: 52%;
-    transform: translateX(-50%);
-    top: 4.5rem;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .dropdown-content a {
-    font-family: 'Bebas Neue', sans-serif;
-    color: black;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: rgba(0, 140, 255, 0.5);
-    color: white;
-  }
+    color: #2c3e50; /* Dark color for contrast */
+    margin-bottom: 15px; /* Increased spacing for better separation */
+}
+
+.team-member h3 {
+    font-family: 'Roboto', sans-serif; /* Clean, modern sans-serif font for subheadings */
+    font-size: 1.2rem; /* Slightly larger for better readability */
+    font-weight: 500; /* Medium weight for contrast with the heading */
+    color: #3498db; /* Highlighted color */
+    margin-bottom: 20px; /* Extra space to separate from the paragraph */
+}
+
+.team-member p {
+    font-family: 'Roboto', sans-serif; /* Same clean sans-serif for body text */
+    font-size: 1rem; /* Slightly larger body text for readability */
+    color: #666; /* Subtle gray for the text */
+    line-height: 1.8; /* Increased line-height for better readability */
+    margin-bottom: 20px; /* Space after the paragraph for balance */
+}
 
 
+/* Loader */
+.loader {
+    border: 6px solid #f3f3f3; /* Light gray border */
+    border-top: 6px solid #002147; /* Oxford Blue border on the top */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1.5s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Intro Animation */
 .intro {
-    position: absolute; /* Positioning to center it */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center alignment */
-    opacity: 1; /* Fully visible */
-    transition: opacity 1s ease; /* Transition for fading */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    height: 100vh;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .intro.fade-out {
-    opacity: 0; /* Faded out */
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
-.content {
-    opacity: 0; /* Start as invisible */
-    transition: opacity 1s ease; /* Transition for fading */
-}
-
-.content.visible {
-    opacity: 1; /* Fully visible */
-}
-
-.final-message {
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Bebas Neue', cursive; /* Or your desired font */
-    /* Add any additional styling as needed */
-    font-family: 'Coiny', sans-serif;
-    font-size: 15px;
-    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817)); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;  
-    animation: rainbow-animation 150s linear infinite;
-    opacity: 0.9;
-    text-align: center; /* Center align text */
-    margin: 0;
-    position: relative;
-    bottom: 20px; /* Adjust spacing */
-    opacity: 0; /* Start invisible */
-    animation: pop-up 0.9s forwards; /* Add animation */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive Utilities for Mobile and Tablet Users */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+    .team-container {
+        padding: 10px;
+    }
+
     .team-member {
-        flex-direction: column; /* Stack member details vertically */
-        align-items: center; /* Center align images and text */
-        text-align: center; /* Center text in the member section */
+        padding: 15px;
     }
 
     .team-member img {
-        margin-bottom: 10px; /* Space below images */
-        margin-right: 0; /* Remove right margin */
-    }
-
-    .team-member h2, /* Adjust h2 styling */
-    .team-member h3 { /* Assuming roles are in h3 elements */
-        margin-top: 10px !important; /* Add space above h2/h3 */
-        font-size: 1.5em !important; /* Adjust h2/h3 font size */
-    }
-
-    .dropdown-content {
-        min-width: 100%; /* Full width dropdown on mobile */
-        font-size: 18px; /* Smaller font size for dropdown */
-    }
-
-    p {
-        font-size: 18px; /* Adjust paragraph size for better readability */
+        width: 80px;
+        height: 80px;
     }
 }
 
 @media (max-width: 480px) {
-    .team-member h2, /* Adjust h2 styling */
-    .team-member h3 { /* Assuming roles are in h3 elements */
-        font-size: 1.2em !important; /* Further adjust h2/h3 font size for very small screens */
-        margin-top: 5px !important; /* Adjust spacing above */
+    .team-member h2 {
+        font-size: 1.4rem;
+    }
+
+    .team-member h3 {
+        font-size: 1rem;
+    }
+
+    .team-member p {
+        font-size: 0.9rem;
     }
 
     header h1 {
-        font-size: 24px; /* Even smaller heading for very small screens */
-    }
-
-    nav a {
-        font-size: 18px; /* Further reduce nav font size */
-    }
-
-    .final-message {
-        font-size: 12px; /* Adjust final message size for small screens */
-    }
-
-    p {
-        font-size: 16px; /* Smaller paragraph text for mobile */
+        font-size: 1.8rem;
     }
 }

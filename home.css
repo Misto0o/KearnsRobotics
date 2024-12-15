@@ -49,9 +49,6 @@ body::after {
     opacity: 0.9; /* Increased overlay opacity for darker effect */
     z-index: -1;
 }
-
-
-
     /* Welcome section */
     #welcome {
         padding: 20px;
@@ -59,7 +56,6 @@ body::after {
         z-index: 2;
         margin-top: 1px;
     }
-
 
     /* Header and Navigation */
     header.navbar {
