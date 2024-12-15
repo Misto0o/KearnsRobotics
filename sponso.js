@@ -1,25 +1,47 @@
-   // Dropdown toggle function
-   function toggleDropdown() {
-    const dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.classList.toggle("show");
+// Toggle the navigation menu
+function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.querySelector('.navbar-burger');
+    
+    // Toggle the 'is-active' class to open/close the menu
+    navLinks.classList.toggle('is-active');
+    menuToggle.classList.toggle('is-active');
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
+// Smooth scroll for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-    }
+    });
+});
+
+// Call animations on page load (AOS Init)
+document.addEventListener("DOMContentLoaded", () => {
+    AOS.init(); // Initialize AOS (animation on scroll)
+});
+
+// Function to adjust layout based on screen size
+function checkScreenSize() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const navLinks = document.querySelector(".navbar-menu");
+
+    // Adjust layout styles based on screen width
+    navLinks.style.flexDirection = isMobile ? "column" : "row";
 }
 
-window.onload = function() {
-    const popup = document.getElementById('popup');
-    popup.style.display = 'block'; // Show the popup
+// Call the function on page load and on window resize
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
+if (window.innerWidth <= 768) {
+    // Disable or adjust smooth scrolling on mobile for better performance
+    document.documentElement.style.scrollBehavior = 'auto'; // Reset smooth scrolling if needed
+} else {
+    document.documentElement.style.scrollBehavior = 'smooth';
 }
 
 /* Sposno forum */
@@ -53,28 +75,6 @@ document.getElementById('sponsorshipForm').addEventListener('submit', function(e
         });
 });
 
-
-const track = document.getElementById("image-track");
-
-// Scrolling function to move images over time
-let scrollSpeed = 0; // This variable controls the scrolling speed
-
-const animateScroll = () => {
-    scrollSpeed += 0.5; // Increment scroll speed
-    track.style.transform = `translateX(-${scrollSpeed}px)`; // Move track left
-
-    // Reset the scroll speed if it reaches halfway
-    if (scrollSpeed > track.scrollWidth / 2) {
-        scrollSpeed = 0.5; // Reset to start
-    }
-
-    requestAnimationFrame(animateScroll); // Call function recursively
-};
-
-// Start the scrolling animation
-animateScroll();
-
-
 // Get modal element
 const modal = document.getElementById('formModal');
 const openFormBtn = document.getElementById('openFormBtn');
@@ -96,15 +96,3 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
-
-
-function removeScrollBars() {
-    document.body.style.overflow = 'hidden'; // Prevent scroll bars on the body
-    document.documentElement.style.overflow = 'hidden'; // Prevent scroll bars on the HTML element
-}
-
-// Call the function to remove scroll bars on page load
-window.addEventListener('load', removeScrollBars);
-
-// Optional: If you want to reapply this on window resize
-window.addEventListener('resize', removeScrollBars);

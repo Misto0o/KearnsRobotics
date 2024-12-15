@@ -3,104 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="sponso.css">
+
+    <!-- Include AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Include Bulma CSS framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Kearns Robotics" />
     <meta property="og:description" content="Bringing Change for a Better Tomorrow!" />
-    <meta property="og:image" content='imgs/kearns.png' />
-    <!-- Replace with actual image URL -->
+    <meta property="og:image" content="imgs/kearns.png" />
     <meta property="og:url" content="https://kearnsrobotics.netlify.app/sponso" />
-    <!-- Replace with actual URL -->
     <meta property="og:type" content="website"/>
     <title>Sponsorships</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-        <div class="round"></div>
-    </div>
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn">Resources</button>
-            <div class="dropdown-content">
-                <a href="index.html">Homepage</a>
-                <a href="about.html">About us</a>
-                <a href="team.html">Team Members</a>
-                <a href="mechs.html">Mechanicals</a>
-                <a href="coders.html">Coder Team</a>
+    <!-- Header -->
+    <header class="navbar" id="header" data-aos="fade-down" data-aos-duration="450">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 data-aos="zoom-in" data-aos-duration="600">Kearns Robotics!</h1>
+                <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div id="nav-links" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html" data-aos="fade-up" data-aos-delay="100">Home</a>
+                    <a class="navbar-item" href="about.html" data-aos="fade-up" data-aos-delay="200">About</a>
+                    <a class="navbar-item" href="team.html" data-aos="fade-up" data-aos-delay="300">Team</a>
+                    <a class="navbar-item" href="mechs.html" data-aos="fade-up" data-aos-delay="400">Mechanical</a>
+                    <a class="navbar-item" href="coders.html" data-aos="fade-up" data-aos-delay="500">Coders</a>
+                </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <div id="popup" class="popup">
-        <h1>Meet our Sponsorships!</h1>
-    </div>
-
-    <div class="image-container">
-        <div id="image-track">
-            <img class="image" src="imgs/Guilford-County-Schools.png" draggable="false" />
-            <img class="image" src="imgs/image1.png" draggable="false" alt="Comming Soon" />
-            <img class="image" src="imgs/image2.png" draggable="false" alt="Comming Soon"/>
-            <img class="image" src="imgs/image3.png" draggable="false" alt="Comming Soon"/>
-            <img class="image" src="imgs/image4.png" draggable="false" alt="Comming Soon"/>
-            <img class="image" src="imgs/image5.png" draggable="false" alt="Comming Soon"/>
+    <!-- Title Popup -->
+    <section class="section has-text-centered">
+        <div class="popup" id="popup" data-aos="fade-in" data-aos-duration="500">
+            <h1 class="title is-4">Meet Our Sponsorships!</h1>
         </div>
-    </div>
+    </section>
+
+    <!-- Sponsorship Images -->
+    <section class="section">
+        <div class="container">
+            <div class="image-container" id="image-track">
+                <img src="imgs/Guilford-County-Schools.png" class="image" alt="Sponsor 1" data-aos="fade-up" data-aos-duration="700">
+                <img src="imgs/image1.png" class="image" alt="Coming Soon" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                <img src="imgs/image2.png" class="image" alt="Coming Soon" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                <img src="imgs/image3.png" class="image" alt="Coming Soon" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            </div>
+        </div>
+    </section>
 
     <!-- Learn More Section -->
-    <section class="learn-more">
-        <h2>Why Become a Sponsor?</h2>
-        <p>Your support helps us achieve our goals. Funding for our parts our events too!</p>
-        <button id="openFormBtn">Become a Sponsor</button>
+    <section class="section learn-more" data-aos="fade-up" data-aos-duration="800">
+        <div class="container has-text-centered">
+            <h2 class="title is-3">Why Become a Sponsor?</h2>
+            <p>Your support helps us achieve our goals. Funding for our parts, events, and much more!</p>
+            <button id="openFormBtn" class="button is-primary">Become a Sponsor</button>
+        </div>
     </section>
 
     <!-- Sponsorship Form Modal -->
     <div id="formModal" class="modal">
+        <div class="modal-background"></div>
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <!-- Sponsorship Form -->
-            <div class="sponsorship-form">
+            <div class="box sponsorship-form">
+                <h3 class="title is-4">Sponsorship Form</h3>
                 <form id="sponsorshipForm">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <div class="field">
+                        <label class="label" for="name">Full Name</label>
+                        <div class="control">
+                            <input class="input" type="text" id="name" name="name" required>
+                        </div>
+                    </div>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <div class="field">
+                        <label class="label" for="email">Email</label>
+                        <div class="control">
+                            <input class="input" type="email" id="email" name="email" required>
+                        </div>
+                    </div>
 
-                    <label for="company">Company Name:</label>
-                    <input type="text" id="company" name="company" required>
+                    <div class="field">
+                        <label class="label" for="company">Company Name</label>
+                        <div class="control">
+                            <input class="input" type="text" id="company" name="company" required>
+                        </div>
+                    </div>
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" placeholder="Why would you like to become a sponsor?" required></textarea>
+                    <div class="field">
+                        <label class="label" for="message">Message</label>
+                        <div class="control">
+                            <textarea class="textarea" id="message" name="message" placeholder="Why would you like to become a sponsor?" required></textarea>
+                        </div>
+                    </div>
 
-                    <button type="submit">Submit Sponsorship Request</button>
-                    <div class="success-message" id="successMessage">Your sponsorship request has been submitted successfully!</div>
+                    <div class="control">
+                        <button type="submit" class="button is-success is-fullwidth">Submit Request</button>
+                    </div>
                 </form>
+                <button class="delete is-large close" aria-label="close"></button>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="sponso.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         (function() {
             emailjs.init("UvBBOcqj5ND-MANbY"); // Replace with your public key
         })();
+
+        const openFormBtn = document.getElementById('openFormBtn');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.querySelector('.close');
+
+        openFormBtn.addEventListener('click', () => {
+            formModal.classList.add('is-active');
+        });
+
+        closeModal.addEventListener('click', () => {
+            formModal.classList.remove('is-active');
+        });
     </script>
-    <script src="sponso.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
