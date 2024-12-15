@@ -98,6 +98,11 @@ header h1 {
     text-align: center;
     padding: 10px;
     margin: 0 auto;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 
