@@ -2,210 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTC Robotics Overview</title>
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Kearns Robotics" />
-    <meta property="og:description" content="Bringing Change for a Better Tomorrow!" />
-    <meta property="og:image" content='imgs/kearns.png' />
-    <!-- Replace with actual image URL -->
-    <meta property="og:url" content="https://kearnsrobotics.netlify.app/about" />
-    <!-- Replace with actual URL -->
-    <meta property="og:type" content="website" />
+    
+    <link rel="stylesheet" href="about.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-        h1, h2 {
-            color: rgb(0, 119, 255);
-        }
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
-        .container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-/* Navigation Styles */
-nav {
-    background-color: transparent;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-    margin: 0 1rem;
-    text-decoration: none;
-    position: relative;
-}
-
-nav a:hover {
-    color: #0070ff;
-}
-
-nav a::after {
-    content: '';
-    display: block;
-    height: 3px;
-    background-color: #0070ff;
-    width: 0;
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* Button Styles */
-button {
-    margin-top: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #0070ff;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* Dropdown Styles */
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-
-.dropbtn {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #0070ff;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    white-space: nowrap;
-    z-index: 1;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    left: 50%;
-    transform: translateX(-50%);
-    top: 4.5rem;
-}
-
-.dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-}
-
-.dropdown-content a {
-    font-family: 'Bebas Neue', sans-serif;
-    color: black;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(0, 140, 255, 0.5);
-    color: white;
-}
-      </style>
+    <!-- Favicon -->
+    <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
 </head>
 <body>
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn" onclick="toggleDropdown()">Resources</button>
-            <div class="dropdown-content" id="dropdownContent">
-                <a href="index.html">Homepage</a>
-                <a href="sponso.html">Sponsorships</a>
-                <a href="team.html">Team Members</a>
-                <a href="mechs.html">Mechanicals</a>
-                <a href="coders.html">Coder Team</a>
+    <!-- Header -->
+    <header class="navbar" id="header" data-aos="fade-in" data-aos-duration="450">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>Kearns Robotics!</h1>
+                <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div id="nav-links" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="sponso.html">Sponserships</a>
+                    <a class="navbar-item" href="team.html">Team</a>
+                    <a class="navbar-item" href="mechs.html">Mechanical</a>
+                    <a class="navbar-item" href="coders.html">Coders</a>
+                </div>
             </div>
         </div>
-    </nav>
-    
-    <div class="container">
-        <h1>FTC Robotics Overview</h1>
-        
-        <h2>What is FTC?</h2>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" data-aos="fade-up" data-aos-duration="700">
+        <h1 class="title">FTC Robotics Overview</h1>
+        <h2 class="subtitle">What is FTC?</h2>
         <p>
             FIRST Tech Challenge (FTC) is a robotics competition for middle and high school students. Teams design, build, and program robots to compete in an alliance format against other teams. The goal is to inspire students to pursue careers in science, technology, engineering, and mathematics (STEM).
         </p>
 
-        <h2>How FTC Robotics Works</h2>
+        <h2 class="subtitle">How FTC Robotics Works</h2>
         <p>
             FTC robots are built using a combination of commercial and custom components. Teams utilize a variety of materials, including plastic, metal, and electronics, to create their robots. The process involves:
         </p>
         <ul>
             <li><strong>Design:</strong> Teams sketch out their robot's design, considering functionality and strategy for the competition.</li>
             <li><strong>Build:</strong> Using metal parts, teams construct their robots, ensuring they meet size and weight constraints.</li>
-            <li><strong>Programming:</strong> Teams program their robots using languages like Java allowing them to autonomously perform tasks.</li>
+            <li><strong>Programming:</strong> Teams program their robots using languages like Java, allowing them to autonomously perform tasks.</li>
             <li><strong>Testing:</strong> Continuous testing and iteration help improve performance and reliability before competitions.</li>
         </ul>
 
-        <h2>Competition Format</h2>
+        <h2 class="subtitle">Competition Format</h2>
         <p>
             In competitions, robots participate in a series of matches where they must complete various tasks. Points are earned based on performance and teamwork. Teams also prepare an engineering notebook documenting their design process and strategies, which is evaluated by judges.
         </p>
 
-        <h2>Benefits of FTC Robotics</h2>
+        <h2 class="subtitle">Benefits of FTC Robotics</h2>
         <p>
             Participating in FTC helps students develop crucial skills such as teamwork, problem-solving, and technical proficiency. It fosters a passion for innovation and prepares them for future educational and career opportunities in STEM fields.
         </p>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        function toggleDropdown() {
-            const dropdownContent = document.getElementById("dropdownContent");
-            dropdownContent.classList.toggle("show");
-        }
+        // Initialize AOS
+        AOS.init();
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    const openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
+// Toggle the navigation menu
+function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.querySelector('.navbar-burger');
+    
+    // Toggle the 'is-active' class to open/close the menu
+    navLinks.classList.toggle('is-active');
+    menuToggle.classList.toggle('is-active');
+}
+
+
+// Smooth scroll for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
+    });
+});
+
+// Call animations on page load (AOS Init)
+document.addEventListener("DOMContentLoaded", () => {
+    AOS.init(); // Initialize AOS (animation on scroll)
+});
+
+// Function to adjust layout based on screen size
+function checkScreenSize() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const navLinks = document.querySelector(".navbar-menu");
+
+    // Adjust layout styles based on screen width
+    navLinks.style.flexDirection = isMobile ? "column" : "row";
+}
+
+// Call the function on page load and on window resize
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
+if (window.innerWidth <= 768) {
+    // Disable or adjust smooth scrolling on mobile for better performance
+    document.documentElement.style.scrollBehavior = 'auto'; // Reset smooth scrolling if needed
+} else {
+    document.documentElement.style.scrollBehavior = 'smooth';
+}
     </script>
 </body>
 </html>

@@ -1,0 +1,139 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header and Navigation */
+header.navbar {
+    display: flex;
+    background-color: #161b22;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar a {
+    color: black !important;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center !important;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1434A4;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-item:hover {
+    color: #1434A4 !important;
+}
+
+.navbar-item {
+    color: white !important;
+    margin-right: 100px !important;
+}
+
+.navbar-burger{
+    color: white !important;
+}
+
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+/* Header styles */
+header h1 {
+    font-family: 'Coiny', sans-serif;
+    font-size: 30px;
+    background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 150s linear infinite;
+    opacity: 0.9;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
+
+.navbar-burger {
+    position: absolute; /* Allows precise positioning */
+    left: -15px; /* Adjust distance from the left edge */
+    width: 90px;
+    height: auto;
+    color: black !important;
+}
+
+/* Main content container styles */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h1,
+.container h2 {
+    color: #1d2935;
+}
+
+.container p,
+.container li {
+    color: #4a4a4a;
+}
+
+/* List styling */
+ul {
+    padding-left: 20px;
+    text-align: left; /* Keeps lists aligned for better readability */
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li strong {
+    color: #1d2935;
+}
