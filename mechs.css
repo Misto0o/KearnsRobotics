@@ -1,341 +1,187 @@
 :root {
-    --bg-opacity: 0;
-    --bg-color: rgba(255, 255, 255, 0.9);
-    --border-color: #4CAF50;
-    --hover-bg-color: rgba(0, 140, 255, 0.5);
-    --text-color: black;
-    --header-color: white;
+  --bg-opacity: 0;
+  --bg-color: rgba(255, 255, 255, 0.9);
+  --border-color: #4CAF50;
+  --hover-bg-color: rgba(0, 140, 255, 0.5);
+  --text-color: black;
+  --header-color: white;
 }
 
 html, body {
-    height: 100%; /* Ensure it takes up full viewport height */
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Hides scrollbar */
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body {
-    font-family: sans-serif;
-    position: relative;
-    background-color: black;
-    background-image: url('imgs/mechs.png');
-    background-size: cover;  /* Cover the entire viewport */
-    background-position: center top; /* Keeps the top of the image in view */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Fixes background */
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  background-color: black;
+  background-image: url('imgs/mechs.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(19, 19, 105, 0.61));
-    z-index: -1;
-    opacity: 0.7;
-}
-
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(19, 19, 105, 0.61);
-    opacity: 0.4;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(19, 19, 105, 0.61));
+  z-index: -1;
+  opacity: 0.7;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensure it fits the viewport */
-    position: relative;
-    text-align: center;
-    overflow: hidden; /* Prevent overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* White screen overlay */
 #white-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white; /* White color */
-    z-index: 1;
-    opacity: 1;
-    transition: opacity 2s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 2s ease-out;
 }
 
 .hammer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-    animation: fadeIn 1s forwards;
-    z-index: 10000; /* Higher than #white-screen */    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  animation: hammerSwing 1s forwards;
+  z-index: 10000;
 }
 
 .hammer img {
-    width: 150px;
-    transform-origin: top center;
-    opacity: 1;
-    display: block;
+  width: 150px;
+  transform-origin: top center;
+  opacity: 1;
+  display: block;
 }
 
-/* Hammer swing animation */
 @keyframes hammerSwing {
-    0% { transform: rotate(0); }
-    30% { transform: rotate(-95deg); } /* Hammer goes all the way down */
-    60% { transform: rotate(0); } /* Hammer swings back up */
-    100% { transform: rotate(0); } /* Reset */
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+  0% { transform: rotate(0); }
+  30% { transform: rotate(-95deg); }
+  60% { transform: rotate(0); }
+  100% { transform: rotate(0); }
 }
 
 h1 {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--header-color);
-    font-size: 3em;
-    animation: slideIn 2s ease-in forwards;
-    z-index: 10000;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--header-color);
+  font-size: 3em;
+  animation: fadeIn 2s ease-in forwards;
+  z-index: 10000;
 }
 
 p {
-    color: black;
-}
-
-.content {
-    opacity: 0;
-    transition: opacity 1s ease-in;
+  color: black;
 }
 
 .team-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    opacity: 1; /* Make the team container visible */
-    transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .team-member {
-    background-color: var(--bg-color);
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    opacity: 1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    color: black;
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  opacity: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
 }
 
 .member-image {
-    width: 100px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
-/* Navigation Styles */
-nav {
-    background-color: transparent;
-    padding: 1rem 0;
-    text-align: center;
-  }
-  
-  nav a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-    margin: 0 1rem;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  nav a:hover {
-    color: #0070ff;
-  }
-  
-  nav a::after {
-    content: '';
-    display: block;
-    height: 3px;
-    background-color: #0070ff;
-    width: 0;
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-  }
-  
-  nav a:hover::after {
-    width: 100%;
-  }
-  
-  /* Button Styles */
-  button {
-    margin-top: 1.25rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #0070ff;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  button:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Dropdown Styles */
-  .dropdown {
-    display: inline-block;
-    position: absolute; /* Changed to absolute */
-    top: 10px; /* Adjust the top margin for spacing */
-    left: 10px; /* Adjust the left margin for spacing */
-    z-index: 9999;
-  }
-  
-  .dropbtn {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #0070ff;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 9999;
-  }
-  
-  
-  .dropdown-content {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    white-space: nowrap;
-    z-index: 1;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    left: 52%;
-    transform: translateX(-50%);
-    top: 4.5rem;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .dropdown-content a {
-    font-family: 'Bebas Neue', sans-serif;
-    color: black;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: rgba(0, 140, 255, 0.5);
-    color: white;
-  }
+.navbar {
+  background-color: transparent;
+}
 
+.navbar-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 0 1rem;
+}
 
-  @media (max-width: 480px) {
-    .team-container {
+.navbar-item:hover {
+  color: #0070ff;
+}
+
+@media (max-width: 480px) {
+  .team-container {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-      position: relative;
-      top: -12px; /* Adjusted to move up more */
-      margin-top: -2px; /* Adjusted to move up */
-    }
-  
-    .team-member {
-      width: 40%;
-      margin: 10px 5px;
-      padding: 10px;
-    }
-  
-    h1 {
-      font-size: 1.2rem; /* Smaller font size */
-      margin-top: -5px;
-      position: flex; /* Absolute positioning */
-      top: 1px; /* Distance from the top */
-      margin-left: 120px;
-    }
-  
-    nav a {
-      font-size: 1rem;
-    }
-  
-    .member-image {
-      width: 60px;
-    }
-  
-    .dropdown {
-      left: 0%;
-      top: 10px;
-    }
   }
 
-  /* New media query for tablets (portrait orientation) */
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .team-container {
+  .team-member {
+      width: 40%;
+      margin: 10px 5px;
+  }
+
+  h1 {
+      font-size: 1.2rem;
+  }
+
+  .member-image {
+      width: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team-container {
       flex-direction: column;
       align-items: center;
-      top: -50px; /* Adjusted for portrait orientation */
-      margin-top: -20px; /* Further adjustment */
-    }
-  
-    .team-member {
-      width: 90%; /* Make members wider in portrait view */
-      margin: 10px 0; /* Vertical margin */
-      padding: 15px; /* Adjust padding */
-    }
-  
-    h1 {
-      font-size: 2.2rem; /* Slightly larger for portrait */
-      position: absolute; /* Absolute positioning */
-      top: 0px !important; /* Distance from the top */
-      right: 10px; /* Distance from the right */
-    }
-  
-    nav a {
-      font-size: 1.1rem; /* Adjust for readability */
-    }
-  
-    .member-image {
-      width: 80px; /* Larger image for visibility */
-    }
-  
-    .dropdown {
-      top: 5px; /* Adjust dropdown position for portrait */
-    }
   }
+
+  .team-member {
+      width: 90%;
+      margin: 10px 0;
+  }
+}

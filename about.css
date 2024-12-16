@@ -1,12 +1,30 @@
-/* General body styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.8;
+/* General Reset and Body Styling */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    padding: 0;
 }
 
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Oswald', sans-serif;
+    color: #333;
+    background-color: #f4f4f4; /* Subtle background */
+    line-height: 1.5;
+}
+/* Typography */
+h1,
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+h1.title {
+    font-size: 2rem;
+    color: #fff;
+} 
     /* Header and Navigation */
     header.navbar {
         display: flex;
@@ -54,7 +72,7 @@ body {
 
     .navbar a:hover::before {
         transform: scaleX(1);
-        transform-origin: bottom center;
+        transform-origin: bottom left;
     }
 
     .navbar-item:hover {
@@ -62,11 +80,11 @@ body {
     }
 
     .navbar-item {
-        color: black !important;
+        color: white !important;
     }
 
     .navbar-burger{
-        color: black !important;
+        color: white !important;
     }
 
     /* Header content styling */
@@ -105,16 +123,8 @@ header h1 {
     }
 }
 
-.navbar-burger {
-    position: absolute; /* Allows precise positioning */
-    left: -15px; /* Adjust distance from the left edge */
-    width: 90px;
-    height: auto;
-    color: black !important;
-}
-
 /* Main content container styles */
-.container {
+.maincontainer {
     max-width: 900px;
     margin: 50px auto;
     padding: 40px;
@@ -128,13 +138,13 @@ header h1 {
     justify-content: center;
 }
 
-.container h1,
-.container h2 {
+.maincontainer h1,
+.maincontainer h2 {
     color: #1d2935;
 }
 
-.container p,
-.container li {
+.maincontainer p,
+.maincontainer li {
     color: #4a4a4a;
 }
 
@@ -150,4 +160,71 @@ ul li {
 
 ul li strong {
     color: #1d2935;
+}
+
+/* Media Query for 768px */
+@media (max-width: 768px) {
+    /* Adjust body and font sizes */
+    html, body {
+        font-size: 90%; /* Scales down text slightly */
+    }
+
+       /* General responsive adjustments */
+       .header-content {
+        justify-content: center;
+    }
+
+    /* Typography adjustments */
+    h1, h2 {
+        font-size: 1.5rem; /* Slightly smaller headers */
+    }
+
+    h1.title {
+        font-size: 1.8rem;
+    }
+
+    /* Navbar adjustments */
+    header.navbar {
+        flex-direction: column; /* Stack navigation vertically */
+        align-items: center;
+        padding: 10px 0;
+        gap: 1rem; /* Reduce gap between items */
+    }
+
+    .navbar a {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 8px 15px;
+    }
+
+    /* Header content alignment */
+    .header-content {
+        justify-content: center; /* Center content on smaller screens */
+        padding-left: 0;
+    }
+
+    /* Main container adjustments */
+    .maincontainer {
+        margin: 20px auto; /* Reduce spacing for better fit */
+        padding: 20px; /* Reduce padding */
+        min-height: 70vh; /* Adjust height */
+    }
+
+    .maincontainer h1, 
+    .maincontainer h2 {
+        font-size: 1.4rem; /* Smaller heading sizes */
+    }
+
+    .maincontainer p, 
+    .maincontainer li {
+        font-size: 0.9rem; /* Reduce paragraph text size */
+    }
+
+    /* List styling */
+    ul {
+        padding-left: 15px; /* Smaller padding */
+    }
+
+    ul li {
+        margin-bottom: 8px; /* Reduce space between items */
+    }
 }
