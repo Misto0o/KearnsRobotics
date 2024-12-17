@@ -1,85 +1,51 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const hammerImg = document.querySelector('.hammer img');
-    const content = document.querySelector('.content');
-    const title = document.querySelector('h1');
-    const body = document.querySelector('body');
-    const teamContainer = document.querySelector('.team-container');
-    const dropdownButton = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    const whiteScreen = document.getElementById('white-screen');
+// Toggle the navigation menu
+function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.querySelector('.navbar-burger');
+    
+    // Toggle the 'is-active' class to open/close the menu
+    navLinks.classList.toggle('is-active');
+    menuToggle.classList.toggle('is-active');
+}
 
-    dropdownButton.style.opacity = '0';
-    dropdownButton.style.pointerEvents = 'none';
-
-    // Start the hammer animation
-    setTimeout(() => {
-        hammerImg.style.opacity = '1';
-        hammerImg.style.animation = 'hammerSwing 2s ease-in-out 3 forwards';
-    }, 100);
-
-    // Start fade out after hammer animation
-    setTimeout(() => {
-        hammerImg.style.animation = 'fadeOut 2.5s ease-in-out forwards';
-        
-        hammerImg.addEventListener('animationend', () => {
-            hammerImg.parentElement.style.display = 'none'; // Hide hammer
-            content.style.display = 'block'; // Show content
-            content.style.opacity = '1'; // Fade in content
-
-            dropdownButton.style.opacity = '1'; // Show dropdown
-            dropdownButton.style.pointerEvents = 'auto';
-
-            teamContainer.style.display = 'flex';
-            setTimeout(() => {
-                teamContainer.style.opacity = '1'; // Fade in team container
-            }, 100);
-        });
-    }, 6000); // Adjust timing
-
-    // Fade out white screen after hammer animation
-    setTimeout(() => {
-        whiteScreen.style.transition = 'opacity 2s ease-out';
-        whiteScreen.style.opacity = '0';
-        setTimeout(() => whiteScreen.style.display = 'none', 2000); // Hide completely
-    }, 7500);
-
-    // Dropdown toggle function
-    dropdownButton.addEventListener('mouseenter', () => {
-        dropdownContent.style.opacity = '1';
-        dropdownContent.style.visibility = 'visible';
-    });
-
-    dropdownButton.addEventListener('mouseleave', () => {
-        dropdownContent.style.opacity = '0';
-        dropdownContent.style.visibility = 'hidden';
-    });
-
-    dropdownContent.addEventListener('mouseenter', () => {
-        dropdownContent.style.opacity = '1';
-        dropdownContent.style.visibility = 'visible';
-    });
-
-    dropdownContent.addEventListener('mouseleave', () => {
-        dropdownContent.style.opacity = '0';
-        dropdownContent.style.visibility = 'hidden';
+// Smooth scroll for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
-   // Dropdown toggle function
-   function toggleDropdown() {
-    const dropdownContent = document.getElementById("dropdownContent");
-    dropdownContent.classList.toggle("show");
+
+// Function to adjust layout based on screen size
+function checkScreenSize() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const navLinks = document.querySelector(".navbar-menu");
+
+    // Adjust layout styles based on screen width
+    navLinks.style.flexDirection = isMobile ? "column" : "row";
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        const dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
+// Call the function on page load and on window resize
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
+if (window.innerWidth <= 768) {
+    // Disable or adjust smooth scrolling on mobile for better performance
+    document.documentElement.style.scrollBehavior = 'auto'; // Reset smooth scrolling if needed
+} else {
+    document.documentElement.style.scrollBehavior = 'smooth';
 }
+
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);

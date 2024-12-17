@@ -3,76 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechs</title>
+    <title>Kearns Robotics - Mechs</title>
     <link rel="stylesheet" href="mechs.css">
     <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Kearns Robotics" />
     <meta property="og:description" content="Bringing Change for a Better Tomorrow!" />
-    <meta property="og:image" content='imgs/kearns.png' />
+    <meta property="og:image" content="imgs/kearns.png" />
     <meta property="og:url" content="https://kearnsrobotics.netlify.app/mechs" />
     <meta property="og:type" content="website" />
 </head>
 <body>
-    <!-- White screen overlay -->
-    <div id="white-screen"></div> 
-
-    <!-- Navbar with Bulma -->
-    <nav class="navbar is-transparent">
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="index.html">Homepage</a>
-                <a class="navbar-item" href="sponso.html">Sponsorships</a>
-                <a class="navbar-item" href="team.html">Team Members</a>
-                <a class="navbar-item" href="mechs.html">Mechanicals</a>
-                <a class="navbar-item" href="coders.html">Coder Team</a>
+        <!-- Header -->
+        <header class="navbar" id="header" data-aos="fade-in" data-aos-duration="450">
+            <div class="container">
+                <div class="navbar-brand">
+                    <h1 class="navbar-item">
+                        Welcome to Kearns Robotics!</h1>
+                    <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div id="nav-links" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="index.html">Home</a>
+                        <a class="navbar-item" href="about.html">About</a>
+                        <a class="navbar-item" href="sponso.html">Sponsorships</a>
+                        <a class="navbar-item" href="team.html">Team</a>
+                        <a class="navbar-item" href="coders.html">Coders</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hammer animation section with AOS -->
-    <div class="container" data-aos="fade-up" data-aos-duration="2000">
-        <div class="hammer">
-            <img src="imgs/Hammer (2).png" alt="Hammer" class="animate-hammer">
-        </div>
-
-        <!-- Content that will show after the animation -->
-        <div class="content" style="display: none;"> <!-- Hidden content initially -->
-            <h1 class="welcome">Welcome to the Mechanical World!</h1>
-        </div>
-
-        <!-- Team section -->
+        </header>
+    <main>
+        <ul class='slider'>
+          <li class='item' style="background-image: url('imgs/drivetrain.jpg')">
+            <div class='content'>
+              <h2 class='title'>"DriveTrain"</h2>
+              <p class='description'>The purpose of the drivetrain is to facilitate the movement of the robot, and thus is crucial to the overall function of the robot. If the drivetrain doesn't work, the rest of the robot won't work either</p>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('imgs/roboclaw.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Robot Claw"</h2>
+              <p class='description'>A claw is a passive intake that holds game elements by pinching them. Claws are useful for picking up large or oddly shaped objects that active intakes can't handle</p>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('imgs/roboopen.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Claw Opened"</h2>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('imgs/roboto.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Full Robot"</h2>
+              <p class='description'>This is the full Robot when everything is done minus the cable management</p>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('imgs/teamrobo.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Mech Team Working On The Robot"</h2>
+              <p class='description'>Xander and Sam are working on the cable management and making sure all the wheels are working</p>
+            </div>
+          </li>
+        </ul>
+      
+        <!-- Team Section -->
         <div class="team-container">
-            <div class="team-member" data-aos="fade-up" data-aos-duration="1000">
-                <img src="teamimg/CadJack.png" alt="Member 1" class="member-image">
-                <h2>Jack</h2>
-                <p>Role: CAD Builder</p>
-            </div>
-            <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <img src="teamimg/JackE.png" alt="Member 2" class="member-image">
-                <h2>Jack</h2>
-                <p>Role: 3D Printing</p>
-            </div>
-            <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <img src="teamimg/XanXann.png" alt="Member 3" class="member-image">
-                <h2>Xander</h2>
-                <p>Role: Builder</p>
-            </div>
-            <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                <img src="teamimg/Chris.png" alt="Member 4" class="member-image">
-                <h2>Christopher</h2>
-                <p>Role: Mechanical</p>
-            </div>
+          <div class="team-member" data-aos="fade-up" data-aos-duration="1000">
+            <img src="teamimg/CadJack.png" alt="Jack - CAD Builder" class="member-image">
+            <h2>Jack</h2>
+            <p>Role: CAD Builder</p>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <img src="teamimg/JackE.png" alt="Jack - 3D Printing" class="member-image">
+            <h2>Jack</h2>
+            <p>Role: 3D Printing</p>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <img src="teamimg/XanXann.png" alt="Xander - Builder" class="member-image">
+            <h2>Xander</h2>
+            <p>Role: Builder</p>
+          </div>
+          <div class="team-member" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+            <img src="teamimg/Chris.png" alt="Christopher - Mechanical" class="member-image">
+            <h2>Christopher</h2>
+            <p>Role: Mechanical</p>
+          </div>
         </div>
-    </div>
-
-    <script src="mechs.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+      </main>
+      
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
 </body>
+<script src="mechs.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </html>
