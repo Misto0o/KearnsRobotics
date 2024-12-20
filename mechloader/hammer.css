@@ -101,3 +101,29 @@ body {
       stroke-dashoffset: 0;
     }
   }
+
+/* Media query for devices with a max width of 768px (mobile and small tablets) */
+@media (max-width: 768px) {
+  body {
+      flex-direction: column; /* Ensures vertical alignment */
+      justify-content: center; /* Centers content vertically */
+      align-items: center; /* Centers content horizontally */
+      height: 100vh; /* Full viewport height for centering */
+      padding: 0; /* Remove any additional padding */
+  }
+
+  .container {
+      max-width: 100%; /* Ensure container spans most of the screen */
+      margin: 0 auto; /* Center the container horizontally */
+  }
+
+  .link-btn {
+      font-size: 16px; /* Adjust font size for smaller screens */
+      padding: 12px 30px; /* Adjust padding */
+  }
+
+  svg {
+      height: 70px; /* Adjust SVG size for smaller screens */
+      margin: 10px auto;
+  }
+}
