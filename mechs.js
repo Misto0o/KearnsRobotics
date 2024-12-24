@@ -28,18 +28,6 @@ function checkScreenSize() {
     // Adjust layout styles based on screen width
     navLinks.style.flexDirection = isMobile ? "column" : "row";
 }
-
-// Call the function on page load and on window resize
-window.addEventListener("load", checkScreenSize);
-window.addEventListener("resize", checkScreenSize);
-
-if (window.innerWidth <= 768) {
-    // Disable or adjust smooth scrolling on mobile for better performance
-    document.documentElement.style.scrollBehavior = 'auto'; // Reset smooth scrolling if needed
-} else {
-    document.documentElement.style.scrollBehavior = 'smooth';
-}
-
 const slider = document.querySelector('.slider');
 
 function activate(e) {

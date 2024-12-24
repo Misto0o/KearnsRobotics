@@ -26,8 +26,8 @@ main {
   height: 300px;
   list-style-type: none;
   position: absolute;
-  top: 30%; /* Move carousel items up */
-  transform: translateY(-50%);
+  top: 50%; /* Center the carousel items vertically */
+  transform: translateY(-50%); /* Adjust the vertical positioning */
   z-index: 1;
   background-position: center;
   background-size: cover;
@@ -36,33 +36,40 @@ main {
   transition: transform 0.1s, left 1.75s, top 1.75s, width 1.75s, height 1.75s;
 }
 
-.item:nth-child(1), .item:nth-child(2) {
-  left: 0;
-  top: 0;
+/* Center the first two items */
+.item:nth-child(1),
+.item:nth-child(2) {
+  left: 50%; /* Align the items horizontally */
+  transform: translateX(-50%) translateY(-50%); /* Center horizontally and vertically */
   width: 100%;
   height: 100%;
-  transform: none;
+  opacity: 1;
   border-radius: 0;
   box-shadow: none;
-  opacity: 1;
 }
 
+/* Adjust the position of subsequent items */
 .item:nth-child(3) {
-  left: 55%;
+  left: calc(50% + 220px); /* Shift the third item to the right */
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .item:nth-child(4) {
-  left: calc(55% + 220px);
+  left: calc(50% + 440px); /* Shift the fourth item further right */
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .item:nth-child(5) {
-  left: calc(55% + 440px);
+  left: calc(50% + 660px); /* Shift the fifth item */
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .item:nth-child(6) {
-  left: calc(52% + 660px);
+  left: calc(50% + 880px); /* Shift the sixth item */
   opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
 }
+
 
 /* Content Styling */
 .content {
@@ -86,11 +93,10 @@ main {
 .content .description {
   line-height: 1.7;
   margin: 1rem 0 1.5rem;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
 }
 
 .content button {
-  width: -moz-fit-content;
   width: fit-content;
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
@@ -109,52 +115,58 @@ main {
 @keyframes show {
   0% {
     filter: blur(5px);
-    transform: translateY(calc(-50% + 75px));
+    transform: translateY(calc(-50% + 75px)); /* Adjust for desktop */
   }
   100% {
     opacity: 1;
     filter: blur(0);
+    transform: translateY(0); /* End at normal position */
   }
 }
 
-/* Navigation Bar */
-.nav {
-  position: absolute;
-  top: 1rem; /* Move navbar up */
-  left: 50%;
+/* Navigation Buttons (Scroller) */
+.scroller {
+  position: fixed; /* Keep it fixed at the bottom */
+  bottom: 1rem; /* Position 1rem above the bottom of the viewport */
+  left: 50%; /* Center the navigation horizontally */
   transform: translateX(-50%);
-  z-index: 5;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  z-index: 5; /* Ensure it stays above other elements */
+  user-select: none;
 }
 
-.nav .btn {
-  background-color: rgba(255, 255, 255, 0.5);
+.scroller .btn {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid rgba(0, 0, 0, 0.6);
-  margin: 0 0.25rem;
-  padding: 0.75rem;
+  margin: 0 0.25rem; /* Add spacing between buttons */
+  padding: 0.75rem; /* Adjust size of buttons */
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.nav .btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.scroller .btn:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly lighter on hover */
 }
+
 
 /* Header and Navbar Styling */
 header.navbar {
+  position: fixed; /* Ensure the navbar stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  background-color: rgba(255, 255, 255, 0.468);
-  padding: 10px 10px; /* Adjust padding to move navbar up */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  gap: 2rem;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for a modern look */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays above other elements */
 }
 
 .navbar a {
-  color: white;
+  color: black;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
@@ -181,22 +193,18 @@ header.navbar {
 
 .navbar a:hover::before {
   transform: scaleX(1);
-  transform-origin: bottom center;
+  transform-origin: bottom left;
 }
 
 .navbar-item:hover {
   color: #1434A4 !important;
 }
 
-.navbar-item {
-  color: white !important;
-}
-
-.navbar-burger {
+.navbar-burger{
   color: black !important;
 }
 
-/* Header Content Styling */
+/* Header content styling */
 .header-content {
   display: flex;
   align-items: center;
@@ -205,121 +213,132 @@ header.navbar {
   padding-left: 20px;
 }
 
-/* Header Styling */
+/* Header styles */
 header h1 {
-  font-family: 'Coiny', sans-serif;
-  font-size: 30px;
-  background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rainbow-animation 150s linear infinite;
-  opacity: 0.9;
-  text-align: center;
-  padding: 50px;
-  margin: 0 auto;
-  font-size: 1.8rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
+font-family: 'Coiny', sans-serif;
+font-size: 30px;
+background-image: linear-gradient(to right, rgb(0, 140, 255), cyan, blue, rgba(0, 0, 0, 0.817));
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: rainbow-animation 150s linear infinite;
+opacity: 0.9;
+text-align: center;
+padding: 10px;
+margin: 0 auto;
+font-size: 1.8rem;
+color: #fff;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: bold;
 }
+
 
 @keyframes rainbow-animation {
-  to {
-    background-position: 4500vh;
-  }
+to {
+  background-position: 4500vh;
 }
-
-/* Media Queries */
-@media (width > 650px) and (width < 900px) {
-  .content .title {
-    font-size: 1rem;
-  }
-  .content .description {
-    font-size: 0.7rem;
-  }
-  .content button {
-    font-size: 0.7rem;
-  }
-  .item {
-    width: 160px;
-    height: 270px;
-  }
-  .item:nth-child(3) {
-    left: 50%;
-  }
-  .item:nth-child(4) {
-    left: calc(50% + 170px);
-  }
-  .item:nth-child(5) {
-    left: calc(50% + 340px);
-  }
-  .item:nth-child(6) {
-    left: calc(50% + 510px);
-    opacity: 0;
-  }
-}
-
-@media (width < 650px) {
-  .content .title {
-    font-size: 0.9rem;
-  }
-  .content .description {
-    font-size: 0.65rem;
-  }
-  .content button {
-    font-size: 0.7rem;
-  }
-  .item {
-    width: 130px;
-    height: 220px;
-  }
-  .item:nth-child(3) {
-    left: 50%;
-  }
-  .item:nth-child(4) {
-    left: calc(50% + 140px);
-  }
-  .item:nth-child(5) {
-    left: calc(50% + 280px);
-  }
-  .item:nth-child(6) {
-    left: calc(50% + 420px);
-    opacity: 0;
-  }
 }
 
 /* Media Query for 768px and below */
 @media (max-width: 768px) {
-  .navbar a {
-    font-size: 0.9rem;
-    color: white !important;
-}
-
-header h1 {
-    font-size: 1.2rem !important; /* Smaller font size */
-    margin-left: auto; /* Push it to the right */
-    margin-right: 0px; /* Adjust spacing from the right edge */
-}
-
-
-/* Navbar links in mobile view */
-.navbar-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.navbar-menu.is-active {
+  /* Body Styling */
+  body {
     display: flex;
-}
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+  }
 
-.navbar-item {
+  /* Main Section Styling */
+  main {
+    height: auto; /* Allow main to grow based on content */
+    box-shadow: none;
+  }
+
+  /* Item Styling */
+  .item {
+    width: 100vw; /* Take the full width of the viewport */
+    height: auto;
+    left: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    transition: transform 0.5s, opacity 0.5s; /* Smooth transitions */
+  }
+
+  .item:nth-child(1) {
+    display: block; /* Ensure the first item is visible */
+    opacity: 1;
+  }
+
+  /* Hide items from 2nd to 6th */
+  .item:nth-child(2),
+  .item:nth-child(3),
+  .item:nth-child(4),
+  .item:nth-child(5),
+  .item:nth-child(6) {
+    display: none; /* Hide all other images on mobile */
+  }
+
+  /* Content Styling */
+  .content {
+    position: relative; /* Make content flow within the document */
+    width: calc(100% - 2rem); /* Add some padding */
+    margin: 1rem auto;
+    text-align: left; /* Align text to the left */
+    top: 0;
+    left: 0;
+    transform: none;
+    display: block; /* Ensure content is displayed */
+    opacity: 1; /* Make text visible */
+    animation: show 0.75s ease-in-out forwards; /* Apply animation */
+    padding-left: 1rem; /* Add some padding to the left */
+    padding-top: 20rem; /* Add top padding to move the content down */
+  }
+
+  /* Content Title Styling */
+  .content .title {
+    font-size: 1.2rem; /* Increase size for readability */
+    margin-bottom: 0.5rem; /* Add space below the title */
+  }
+
+  /* Content Description Styling */
+  .content .description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem; /* Add space below the description */
+  }
+
+  /* Content Button Styling */
+  .content button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem; /* Add space above the button */
+  }
+
+  /* Scroller Button Styling */
+  .scroller .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  /* Navbar Styling */
+  header.navbar {
     padding: 1rem;
-    text-align: center;
-    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  /* Navbar Link Styling */
+  .navbar a {
+    padding: 0.5rem;
     color: white !important;
-}
+    font-size: 0.8rem;
+  }
+
+  /* Header Styling */
+  header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
 }
