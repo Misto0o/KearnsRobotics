@@ -4,51 +4,62 @@
         margin: 0;
         padding: 0;
     }
-    html, body {
+
+    html,
+    body {
         height: 100%;
         overflow-x: hidden;
         -webkit-backdrop-filter: blur(5px);
         backdrop-filter: blur(8px);
-        overflow: hidden; /* Hides scrollbar */
+        overflow: hidden;
+        /* Hides scrollbar */
     }
 
     body {
         font-family: sans-serif;
         position: relative;
-        background-color: #f4f4f4; /* Light gray background */
+        background-color: #f4f4f4;
+        /* Light gray background */
     }
 
-/* Blurred background effect */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('imgs/AIRobot.jpg'); /* Replace with your desired image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.85; /* Slightly darker */
-    z-index: -2;
-    filter: blur(10px); /* Adjusted for ~45% of the original blur (20px -> 9px) */
-    background-blend-mode: darken;
-    backdrop-filter: blur(6.75px); /* Proportional to ~45% of the original 15px */
-}
+    /* Blurred background effect */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('imgs/AIRobot.jpg');
+        /* Replace with your desired image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.85;
+        /* Slightly darker */
+        z-index: -2;
+        filter: blur(10px);
+        /* Adjusted for ~45% of the original blur (20px -> 9px) */
+        background-blend-mode: darken;
+        backdrop-filter: blur(6.75px);
+        /* Proportional to ~45% of the original 15px */
+    }
 
-/* Dark overlay to add more depth */
-body::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(10, 10, 50, 0.75); /* Darker blue overlay */
-    opacity: 0.9; /* Increased overlay opacity for darker effect */
-    z-index: -1;
-}
+    /* Dark overlay to add more depth */
+    body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(10, 10, 50, 0.75);
+        /* Darker blue overlay */
+        opacity: 0.9;
+        /* Increased overlay opacity for darker effect */
+        z-index: -1;
+    }
+
     /* Welcome section */
     #welcome {
         padding: 20px;
@@ -115,9 +126,11 @@ body::after {
         color: white !important;
     }
 
-    .navbar-burger{
-        position: absolute; /* Allows precise positioning */
-        left: -35px !important; /* Adjust distance from the left edge */
+    .navbar-burger {
+        position: absolute;
+        /* Allows precise positioning */
+        left: -35px !important;
+        /* Adjust distance from the left edge */
         height: auto;
         color: white !important;
     }
@@ -204,15 +217,18 @@ body::after {
     }
 
     .navbar-burger {
-        position: absolute; /* Allows precise positioning */
-        left: -15px; /* Adjust distance from the left edge */
+        position: absolute;
+        /* Allows precise positioning */
+        left: -15px;
+        /* Adjust distance from the left edge */
         width: 90px;
         height: auto;
     }
-    
+
 
     /* Mobile Devices (up to 767px) */
     @media (max-width: 767px) {
+
         /* Logo size for mobile */
         .logo {
             width: 25%;
@@ -236,11 +252,14 @@ body::after {
         }
 
         header h1 {
-            font-size: 1.2rem !important; /* Smaller font size */
-            margin-left: auto; /* Push it to the right */
-            margin-right: 0px; /* Adjust spacing from the right edge */
+            font-size: 1.2rem !important;
+            /* Smaller font size */
+            margin-left: auto;
+            /* Push it to the right */
+            margin-right: 0px;
+            /* Adjust spacing from the right edge */
         }
-    
+
         h2 {
             font-size: 16px;
             padding: 12px;

@@ -2,7 +2,7 @@
 function toggleNav() {
     const navLinks = document.getElementById('nav-links');
     const menuToggle = document.querySelector('.navbar-burger');
-    
+
     // Toggle the 'is-active' class to open/close the menu
     navLinks.classList.toggle('is-active');
     menuToggle.classList.toggle('is-active');
@@ -47,7 +47,7 @@ if (window.innerWidth <= 768) {
 /* Sposno forum */
 const btn = document.querySelector('.sponsorship-form button'); // Update to target the button in the form
 
-document.getElementById('sponsorshipForm').addEventListener('submit', function(event) {
+document.getElementById('sponsorshipForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     btn.innerText = 'Sending...'; // Update button text
@@ -81,17 +81,17 @@ const openFormBtn = document.getElementById('openFormBtn');
 const closeBtn = document.getElementsByClassName('close')[0];
 
 // Open modal when button clicked
-openFormBtn.onclick = function() {
+openFormBtn.onclick = function () {
     modal.style.display = 'block';
 }
 
 // Close modal when x is clicked
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
     modal.style.display = 'none';
 }
 
 // Close modal when clicking outside of the modal
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = 'none';
     }

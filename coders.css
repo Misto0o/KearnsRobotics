@@ -21,89 +21,100 @@ body {
   font-family: 'Oswald', sans-serif;
   color: #fff;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6, #f59e0b);
-  background-size: 300% 300%; /* Ensures the gradient is large enough to animate */
+  background-size: 300% 300%;
+  /* Ensures the gradient is large enough to animate */
   animation: gradientAnimation 15s ease infinite;
-  min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
-  margin: 0; /* Removes any default margin */
-  overflow-x: hidden; /* Prevents horizontal overflow */
+  min-height: 100vh;
+  /* Ensures the body takes up at least the full height of the viewport */
+  margin: 0;
+  /* Removes any default margin */
+  overflow-x: hidden;
+  /* Prevents horizontal overflow */
 }
 
 
 @keyframes gradientAnimation {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
-    /* Header and Navigation */
-    header.navbar {
-      display: flex;
-      background-color: #161b22;
-      padding: 15px 0;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      gap: 2rem;
-      align-items: center;
-  }
+/* Header and Navigation */
+header.navbar {
+  display: flex;
+  background-color: #161b22;
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  align-items: center;
+}
 
-  header h1 {
-      font-size: 1.8rem;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-align: center;
-      font-weight: bold;
-  }
+header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+}
 
-  .navbar a {
-      color: white;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 10px 20px;
-      position: relative;
-      transition: all 0.3s ease;
-      text-align: center;
-  }
+.navbar a {
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-  .navbar a::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: #1434A4;
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease;
-  }
+.navbar a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1434A4;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
 
-  .navbar a:hover::before {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-  }
+.navbar a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
-  .navbar-item:hover {
-      color: #1434A4 !important;
-  }
+.navbar-item:hover {
+  color: #1434A4 !important;
+}
 
-  .navbar-item {
-      color: white !important;
-  }
+.navbar-item {
+  color: white !important;
+}
 
-  .navbar-burger{
-      color: white !important;
-  }
+.navbar-burger {
+  color: white !important;
+}
 
-  /* Header content styling */
-  .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      margin-top: 20px;
-      padding-left: 20px;
-  }
+/* Header content styling */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding-left: 20px;
+}
 
 /* Header styles */
 header h1 {
@@ -128,7 +139,7 @@ header h1 {
 
 @keyframes rainbow-animation {
   to {
-      background-position: 4500vh;
+    background-position: 4500vh;
   }
 }
 
@@ -147,7 +158,8 @@ header h1 {
 }
 
 .hero h2 {
-  font-size: 2rem; /* Large title font size */
+  font-size: 2rem;
+  /* Large title font size */
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -156,69 +168,92 @@ header h1 {
 .hero p {
   font-size: 1.25rem;
   font-weight: 300;
-  color: #f4f4f4; /* Light text for contrast */
+  color: #f4f4f4;
+  /* Light text for contrast */
 }
 
 /* About Section Styling */
 .glass-section {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-
-  padding: 80px 0; /* Padding for spacing */
+  background: rgba(255, 255, 255, 0.1);
+  /* Semi-transparent white background */
+  padding: 80px 0;
+  /* Padding for spacing */
 }
 
 /* Custom glassmorphism card */
 .glass-card {
-  background: rgba(255, 255, 255, 0.15) !important; /* Semi-transparent white */
-
-  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Subtle border */
-  border-radius: 15px !important; /* Rounded corners */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important; /* Soft shadow */
+  background: rgba(255, 255, 255, 0.15) !important;
+  /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  /* Subtle border */
+  border-radius: 15px !important;
+  /* Rounded corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  /* Soft shadow */
   overflow: hidden !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .glass-card:hover {
-  transform: translateY(-10px) !important; /* Hover effect */
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3) !important; /* Shadow on hover */
+  transform: translateY(-10px) !important;
+  /* Hover effect */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3) !important;
+  /* Shadow on hover */
 }
 
 .glass-card .card-content {
-  color: white !important; /* White text for readability */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important; /* Text contrast */
+  color: white !important;
+  /* White text for readability */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  /* Text contrast */
 }
 
 .glass-card .card-image img {
-  border-radius: 12px !important; /* Match card rounding */
+  border-radius: 12px !important;
+  /* Match card rounding */
 }
 
 .card-image {
   position: relative;
-  width: 150px; /* Width of the circular container */
-  height: 150px; /* Equal height to make it a perfect circle */
-  border-radius: 70%; /* Creates a circular border */
-  display: flex; /* Enables flexbox for centering */
-  align-items: center; /* Vertically centers the image */
-  justify-content: center; /* Horizontally centers the image */
+  width: 150px;
+  /* Width of the circular container */
+  height: 150px;
+  /* Equal height to make it a perfect circle */
+  border-radius: 70%;
+  /* Creates a circular border */
+  display: flex;
+  /* Enables flexbox for centering */
+  align-items: center;
+  /* Vertically centers the image */
+  justify-content: center;
+  /* Horizontally centers the image */
 
 }
 
 .card-image img {
-  width: 150px; /* Ensures the image stretches to fit the oval */
-  height: 150px; /* Matches the oval container height */
-  border-radius: 50%; /* Ensures the image takes on the oval shape */
+  width: 150px;
+  /* Ensures the image stretches to fit the oval */
+  height: 150px;
+  /* Matches the oval container height */
+  border-radius: 50%;
+  /* Ensures the image takes on the oval shape */
   margin-top: 20px;
   left: 80px !important;
 }
 
 .card-image:hover {
-  transform: translateY(-5px); /* Subtle lift effect */
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3); /* More prominent shadow on hover */
+  transform: translateY(-5px);
+  /* Subtle lift effect */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  /* More prominent shadow on hover */
 }
 
 @media (max-width: 768px) {
+
   /* Hero Section */
   .hero {
-    height: 250px; /* Reduced hero section height for mobile */
+    height: 250px;
+    /* Reduced hero section height for mobile */
   }
 
   .hero-body {
@@ -226,43 +261,55 @@ header h1 {
   }
 
   .hero h2 {
-    font-size: 1.5rem; /* Smaller title font size for mobile */
+    font-size: 1.5rem;
+    /* Smaller title font size for mobile */
   }
 
   .hero p {
-    font-size: 1rem; /* Adjust paragraph font size */
+    font-size: 1rem;
+    /* Adjust paragraph font size */
   }
 
   /* About Section */
   .glass-section {
-    padding: 60px 20px; /* Less padding for smaller screens */
+    padding: 60px 20px;
+    /* Less padding for smaller screens */
   }
 
   /* Glass Card */
   .glass-card {
-    padding: 20px; /* Less padding inside the cards */
+    padding: 20px;
+    /* Less padding inside the cards */
   }
 
   /* Card Image */
   .card-image {
-    width: 120px; /* Smaller card image */
-    height: 120px; /* Match the height */
+    width: 120px;
+    /* Smaller card image */
+    height: 120px;
+    /* Match the height */
   }
 
   .card-image img {
-    width: 120px; /* Fit the image inside the smaller circle */
+    width: 120px;
+    /* Fit the image inside the smaller circle */
     height: 120px;
     border-radius: 50%;
   }
 
   /* Custom typography */
-  .has-text-white, .has-text-light, .has-text-grey-dark {
-    font-size: 0.9rem; /* Adjust text size for better readability */
+  .has-text-white,
+  .has-text-light,
+  .has-text-grey-dark {
+    font-size: 0.9rem;
+    /* Adjust text size for better readability */
   }
 
   /* Glassmorphism Effects */
   .glass-card:hover {
-    transform: translateY(-5px); /* Slight hover effect for cards */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Slightly more prominent hover shadow */
+    transform: translateY(-5px);
+    /* Slight hover effect for cards */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    /* Slightly more prominent hover shadow */
   }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="mechs.css">
     <link rel="icon" href="kearnsfavicon/favicon-16x16.png" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -18,66 +20,77 @@
     <meta property="og:url" content="https://kearnsrobotics.netlify.app/mechs" />
     <meta property="og:type" content="website" />
 </head>
-<body>
- <!-- Header -->
- <header class="navbar" id="header" data-aos="fade-down" data-aos-duration="450">
-    <div class="container">
-        <div class="navbar-brand">
-            <h1 data-aos="zoom-in" data-aos-duration="600">Kearns Robotics!</h1>
-            <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
-        </div>
-        <div id="nav-links" class="navbar-menu">
-            <div class="navbar-end">
-                <a class="navbar-item" href="index.html" data-aos="fade-up" data-aos-delay="100">Home</a>
-                <a class="navbar-item" href="about.html" data-aos="fade-up" data-aos-delay="200">About</a>
-                <a class="navbar-item" href="team.html" data-aos="fade-up" data-aos-delay="300">Team</a>
-                <a class="navbar-item" href="sponso.html" data-aos="fade-up" data-aos-delay="400">Sponsorships</a>
-                <a class="navbar-item" href="coders.html" data-aos="fade-up" data-aos-delay="500">Coders</a>
-            </div>
-        </div>
-    </div>
-</header>
 
-<!-- Carousel Section -->
-<section class="carousel-section">
-    <ul class="slider">
-        <!-- Carousel items -->
-        <li class="item" style="background-image: url('imgs/drivetrain.jpg')">
-            <div class="content">
-                <h2 class="title">DriveTrain</h2>
-                <p class="description">The drivetrain is a critical component that powers the robot's movement. It integrates motors, gears, and wheels to enable precise control and motion during tasks and competitions.</p>
+<body>
+    <!-- Header -->
+    <header class="navbar" id="header" data-aos="fade-down" data-aos-duration="450">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1 data-aos="zoom-in" data-aos-duration="600">Kearns Robotics!</h1>
+                <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
             </div>
-        </li>
-        <li class="item" style="background-image: url('imgs/roboclaw.jpg')">
-            <div class="content">
-                <h2 class="title">Robot Claw</h2>
-                <p class="description">The robot claw serves as a passive intake system, designed to grasp and secure game elements with precision. It plays a crucial role in object manipulation during gameplay.</p>
+            <div id="nav-links" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html" data-aos="fade-up" data-aos-delay="100">Home</a>
+                    <a class="navbar-item" href="about.html" data-aos="fade-up" data-aos-delay="200">About</a>
+                    <a class="navbar-item" href="team.html" data-aos="fade-up" data-aos-delay="300">Team</a>
+                    <a class="navbar-item" href="sponso.html" data-aos="fade-up" data-aos-delay="400">Sponsorships</a>
+                    <a class="navbar-item" href="coders.html" data-aos="fade-up" data-aos-delay="500">Coders</a>
+                </div>
             </div>
-        </li>
-        <li class="item" style="background-image: url('imgs/roboopen.jpg')">
-            <div class="content">
-                <h2 class="title">Robot Claw Testing</h2>
-                <p class="description">The robot claw undergoes thorough testing to ensure its functionality in various scenarios. This process helps identify potential issues, ensuring reliable performance in competitions.</p>
-            </div>
-        </li>
-        <li class="item" style="background-image: url('imgs/roboto.jpg')">
-            <div class="content">
-                <h2 class="title">Full Robot Assembly</h2>
-                <p class="description">This is the complete robot, fully assembled and ready for action, minus the final cable management. It represents the culmination of all mechanical and electrical systems working together seamlessly.</p>
-            </div>
-        </li>
-        <li class="item" style="background-image: url('imgs/teamrobo.jpg')">
-            <div class="content">
-                <h2 class="title">Teamwork in Action</h2>
-                <p class="description">Xander and Sam are focused on optimizing the cable management and ensuring the wheels function flawlessly. Their collaborative efforts are key to ensuring the robot's overall performance and reliability.</p>
-            </div>
-        </li>
-    </ul>
-</section>
+        </div>
+    </header>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <ul class="slider">
+            <!-- Carousel items -->
+            <li class="item" style="background-image: url('imgs/drivetrain.jpg')">
+                <div class="content">
+                    <h2 class="title">DriveTrain</h2>
+                    <p class="description">The drivetrain is a critical component that powers the robot's movement. It
+                        integrates motors, gears, and wheels to enable precise control and motion during tasks and
+                        competitions.</p>
+                </div>
+            </li>
+            <li class="item" style="background-image: url('imgs/roboclaw.jpg')">
+                <div class="content">
+                    <h2 class="title">Robot Claw</h2>
+                    <p class="description">The robot claw serves as a passive intake system, designed to grasp and
+                        secure game elements with precision. It plays a crucial role in object manipulation during
+                        gameplay.</p>
+                </div>
+            </li>
+            <li class="item" style="background-image: url('imgs/roboopen.jpg')">
+                <div class="content">
+                    <h2 class="title">Robot Claw Testing</h2>
+                    <p class="description">The robot claw undergoes thorough testing to ensure its functionality in
+                        various scenarios. This process helps identify potential issues, ensuring reliable performance
+                        in competitions.</p>
+                </div>
+            </li>
+            <li class="item" style="background-image: url('imgs/roboto.jpg')">
+                <div class="content">
+                    <h2 class="title">Full Robot Assembly</h2>
+                    <p class="description">This is the complete robot, fully assembled and ready for action, minus the
+                        final cable management. It represents the culmination of all mechanical and electrical systems
+                        working together seamlessly.</p>
+                </div>
+            </li>
+            <li class="item" style="background-image: url('imgs/teamrobo.jpg')">
+                <div class="content">
+                    <h2 class="title">Teamwork in Action</h2>
+                    <p class="description">Xander and Sam are focused on optimizing the cable management and ensuring
+                        the wheels function flawlessly. Their collaborative efforts are key to ensuring the robot's
+                        overall performance and reliability.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
     <!-- Navigation Buttons -->
     <nav class='scroller'>
         <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
@@ -93,4 +106,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>

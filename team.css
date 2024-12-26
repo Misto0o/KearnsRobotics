@@ -5,85 +5,87 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Oswald', sans-serif;
     color: #333;
-    background-color: #f4f4f4; /* Subtle background */
+    background-color: #f4f4f4;
+    /* Subtle background */
     line-height: 1.5;
 }
 
-    /* Header and Navigation */
-    header.navbar {
-        display: flex;
-        background-color: #161b22;
-        padding: 15px 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        gap: 2rem;
-        align-items: center;
-    }
+/* Header and Navigation */
+header.navbar {
+    display: flex;
+    background-color: #161b22;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    align-items: center;
+}
 
-    header h1 {
-        font-size: 1.8rem;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-align: center;
-        font-weight: bold;
-    }
+header h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: bold;
+}
 
-    .navbar a {
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 10px 20px;
-        position: relative;
-        transition: all 0.3s ease;
-        text-align: center;
-    }
+.navbar a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: center;
+}
 
-    .navbar a::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: #1434A4;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-    }
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1434A4;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
 
-    .navbar a:hover::before {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+.navbar a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-    .navbar-item:hover {
-        color: #1434A4 !important;
-    }
+.navbar-item:hover {
+    color: #1434A4 !important;
+}
 
-    .navbar-item {
-        color: white !important;
-    }
+.navbar-item {
+    color: white !important;
+}
 
-    .navbar-burger{
-        color: white !important;
-    }
+.navbar-burger {
+    color: white !important;
+}
 
-    /* Header content styling */
-    .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin-top: 20px;
-        padding-left: 20px;
-    }
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
+}
 
 /* Header styles */
 header h1 {
@@ -113,8 +115,10 @@ header h1 {
 }
 
 .navbar-burger {
-    position: absolute; /* Allows precise positioning */
-    left: -15px; /* Adjust distance from the left edge */
+    position: absolute;
+    /* Allows precise positioning */
+    left: -15px;
+    /* Adjust distance from the left edge */
     width: 90px;
     height: auto;
     color: white !important;
@@ -123,7 +127,8 @@ header h1 {
 /* Team Container */
 .team-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive grid layout */
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
@@ -149,8 +154,10 @@ header h1 {
 
 .team-member img {
     display: block;
-    width: 150px; /* Consistent width for visibility */
-    height: auto; /* Maintain natural aspect ratio */
+    width: 150px;
+    /* Consistent width for visibility */
+    height: auto;
+    /* Maintain natural aspect ratio */
     margin: 20px auto 0;
     object-fit: contain;
     border-radius: 8px;
@@ -161,34 +168,50 @@ header h1 {
 
 /* Typography for Team Members */
 .team-member h2 {
-    font-family: 'Lora', serif; /* Elegant serif font for headings */
-    font-size: 2rem; /* Larger heading size */
+    font-family: 'Lora', serif;
+    /* Elegant serif font for headings */
+    font-size: 2rem;
+    /* Larger heading size */
     font-weight: bold;
-    color: #2c3e50; /* Dark color for contrast */
-    margin-bottom: 15px; /* Increased spacing for better separation */
+    color: #2c3e50;
+    /* Dark color for contrast */
+    margin-bottom: 15px;
+    /* Increased spacing for better separation */
 }
 
 .team-member h3 {
-    font-family: 'Roboto', sans-serif; /* Clean, modern sans-serif font for subheadings */
-    font-size: 1.2rem; /* Slightly larger for better readability */
-    font-weight: 500; /* Medium weight for contrast with the heading */
-    color: #3498db; /* Highlighted color */
-    margin-bottom: 20px; /* Extra space to separate from the paragraph */
+    font-family: 'Roboto', sans-serif;
+    /* Clean, modern sans-serif font for subheadings */
+    font-size: 1.2rem;
+    /* Slightly larger for better readability */
+    font-weight: 500;
+    /* Medium weight for contrast with the heading */
+    color: #3498db;
+    /* Highlighted color */
+    margin-bottom: 20px;
+    /* Extra space to separate from the paragraph */
 }
 
 .team-member p {
-    font-family: 'Roboto', sans-serif; /* Same clean sans-serif for body text */
-    font-size: 1rem; /* Slightly larger body text for readability */
-    color: #666; /* Subtle gray for the text */
-    line-height: 1.8; /* Increased line-height for better readability */
-    margin-bottom: 20px; /* Space after the paragraph for balance */
+    font-family: 'Roboto', sans-serif;
+    /* Same clean sans-serif for body text */
+    font-size: 1rem;
+    /* Slightly larger body text for readability */
+    color: #666;
+    /* Subtle gray for the text */
+    line-height: 1.8;
+    /* Increased line-height for better readability */
+    margin-bottom: 20px;
+    /* Space after the paragraph for balance */
 }
 
 
 /* Loader */
 .loader {
-    border: 6px solid #f3f3f3; /* Light gray border */
-    border-top: 6px solid #002147; /* Oxford Blue border on the top */
+    border: 6px solid #f3f3f3;
+    /* Light gray border */
+    border-top: 6px solid #002147;
+    /* Oxford Blue border on the top */
     border-radius: 50%;
     width: 70px;
     height: 70px;
@@ -200,6 +223,7 @@ header h1 {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

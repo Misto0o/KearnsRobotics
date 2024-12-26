@@ -2,7 +2,7 @@
 function toggleNav() {
     const navLinks = document.getElementById('nav-links');
     const menuToggle = document.querySelector('.navbar-burger');
-    
+
     // Toggle the 'is-active' class to open/close the menu
     navLinks.classList.toggle('is-active');
     menuToggle.classList.toggle('is-active');
@@ -40,8 +40,8 @@ if (window.innerWidth <= 768) {
     document.documentElement.style.scrollBehavior = 'smooth';
 }
 
- // Wait for the page to fully load
- window.onload = function () {
+// Wait for the page to fully load
+window.onload = function () {
     const intro = document.getElementById('intro'); // Loading screen
     const header = document.getElementById('header'); // Navbar
     const teamContainer = document.querySelector('.team-container'); // Main content

@@ -41,7 +41,7 @@ document.querySelector('.link-btn').addEventListener('click', function (e) {
     window.location.href = '../mechs.html'; // Navigate to the correct relative path
   });
 });
-  
+
 
 // Function to adjust layout based on screen size
 function checkScreenSize() {

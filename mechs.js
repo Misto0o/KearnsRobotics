@@ -2,7 +2,7 @@
 function toggleNav() {
     const navLinks = document.getElementById('nav-links');
     const menuToggle = document.querySelector('.navbar-burger');
-    
+
     // Toggle the 'is-active' class to open/close the menu
     navLinks.classList.toggle('is-active');
     menuToggle.classList.toggle('is-active');
@@ -31,9 +31,9 @@ function checkScreenSize() {
 const slider = document.querySelector('.slider');
 
 function activate(e) {
-  const items = document.querySelectorAll('.item');
-  e.target.matches('.next') && slider.append(items[0])
-  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+    const items = document.querySelectorAll('.item');
+    e.target.matches('.next') && slider.append(items[0])
+    e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
 }
 
-document.addEventListener('click',activate,false);
+document.addEventListener('click', activate, false);

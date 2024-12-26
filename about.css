@@ -5,14 +5,17 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Oswald', sans-serif;
     color: #333;
-    background-color: #f4f4f4; /* Subtle background */
+    background-color: #f4f4f4;
+    /* Subtle background */
     line-height: 1.5;
 }
+
 /* Typography */
 h1,
 h2 {
@@ -24,77 +27,78 @@ h2 {
 h1.title {
     font-size: 2rem;
     color: #fff;
-} 
-    /* Header and Navigation */
-    header.navbar {
-        display: flex;
-        background-color: #161b22;
-        padding: 15px 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        gap: 2rem;
-        align-items: center;
-    }
+}
 
-    header h1 {
-        font-size: 1.8rem;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-align: center;
-        font-weight: bold;
-    }
+/* Header and Navigation */
+header.navbar {
+    display: flex;
+    background-color: #161b22;
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    align-items: center;
+}
 
-    .navbar a {
-        color: white;
-        font-size: 1rem;
-        font-weight: bold;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 10px 20px;
-        position: relative;
-        transition: all 0.3s ease;
-        text-align: center;
-    }
+header h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: bold;
+}
 
-    .navbar a::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: #1434A4;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease;
-    }
+.navbar a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: center;
+}
 
-    .navbar a:hover::before {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1434A4;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
 
-    .navbar-item:hover {
-        color: #1434A4 !important;
-    }
+.navbar a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-    .navbar-item {
-        color: white !important;
-    }
+.navbar-item:hover {
+    color: #1434A4 !important;
+}
 
-    .navbar-burger{
-        color: white !important;
-    }
+.navbar-item {
+    color: white !important;
+}
 
-    /* Header content styling */
-    .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin-top: 20px;
-        padding-left: 20px;
-    }
+.navbar-burger {
+    color: white !important;
+}
+
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
+}
 
 /* Header styles */
 header h1 {
@@ -151,7 +155,8 @@ header h1 {
 /* List styling */
 ul {
     padding-left: 20px;
-    text-align: left; /* Keeps lists aligned for better readability */
+    text-align: left;
+    /* Keeps lists aligned for better readability */
 }
 
 ul li {
@@ -164,6 +169,7 @@ ul li strong {
 
 /* Media Query for 768px */
 @media (max-width: 768px) {
+
     /* Adjust body and font sizes */
     header h1 {
         font-size: 1.8rem;
@@ -183,9 +189,12 @@ ul li strong {
         width: 100%;
         color: black !important;
     }
+
     /* Typography adjustments */
-    h1, h2 {
-        font-size: 1.5rem; /* Slightly smaller headers */
+    h1,
+    h2 {
+        font-size: 1.5rem;
+        /* Slightly smaller headers */
     }
 
     h1.title {
@@ -194,27 +203,34 @@ ul li strong {
 
     /* Main container adjustments */
     .maincontainer {
-        margin: 20px auto; /* Reduce spacing for better fit */
-        padding: 20px; /* Reduce padding */
-        min-height: 70vh; /* Adjust height */
+        margin: 20px auto;
+        /* Reduce spacing for better fit */
+        padding: 20px;
+        /* Reduce padding */
+        min-height: 70vh;
+        /* Adjust height */
     }
 
-    .maincontainer h1, 
+    .maincontainer h1,
     .maincontainer h2 {
-        font-size: 1.4rem; /* Smaller heading sizes */
+        font-size: 1.4rem;
+        /* Smaller heading sizes */
     }
 
-    .maincontainer p, 
+    .maincontainer p,
     .maincontainer li {
-        font-size: 0.9rem; /* Reduce paragraph text size */
+        font-size: 0.9rem;
+        /* Reduce paragraph text size */
     }
 
     /* List styling */
     ul {
-        padding-left: 15px; /* Smaller padding */
+        padding-left: 15px;
+        /* Smaller padding */
     }
 
     ul li {
-        margin-bottom: 8px; /* Reduce space between items */
+        margin-bottom: 8px;
+        /* Reduce space between items */
     }
 }
