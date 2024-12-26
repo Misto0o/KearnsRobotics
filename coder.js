@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.container');
-  const title = document.querySelector('h1');
+  const title = document.querySelector('h2');
 
   // Set the initial opacity to 0
   container.style.opacity = '0';
@@ -49,25 +49,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }),
 
-document.addEventListener('DOMContentLoaded', function() {
-  const dropbtn = document.querySelector('.dropbtn');
-  const dropdownContent = document.querySelector('.dropdown-content');
+// Toggle the navigation menu
+function toggleNav() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.querySelector('.navbar-burger');
+    
+    // Toggle the 'is-active' class to open/close the menu
+    navLinks.classList.toggle('is-active');
+    menuToggle.classList.toggle('is-active');
+}
 
-  // Toggle dropdown on click for mobile and tablet users
-  dropbtn.addEventListener('click', function() {
-      const isVisible = dropdownContent.style.visibility === 'visible';
-      
-      // Toggle visibility
-      dropdownContent.style.visibility = isVisible ? 'hidden' : 'visible';
-      dropdownContent.style.opacity = isVisible ? '0' : '1';
-      dropdownContent.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
-  });
-
-  // Close dropdown if clicked outside
-  window.addEventListener('click', function(event) {
-      if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
-          dropdownContent.style.visibility = 'hidden';
-          dropdownContent.style.opacity = '0';
-      }
-  });
+// Smooth scroll for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
+
+
+// Function to adjust layout based on screen size
+function checkScreenSize() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const navLinks = document.querySelector(".navbar-menu");
+
+    // Adjust layout styles based on screen width
+    navLinks.style.flexDirection = isMobile ? "column" : "row";
+}
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
