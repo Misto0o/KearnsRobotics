@@ -162,15 +162,14 @@ header h1 {
 /* About Section Styling */
 .glass-section {
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
+
   padding: 80px 0; /* Padding for spacing */
 }
 
 /* Custom glassmorphism card */
 .glass-card {
   background: rgba(255, 255, 255, 0.15) !important; /* Semi-transparent white */
-  backdrop-filter: blur(10px) !important; /* Adds the blur effect */
-  -webkit-backdrop-filter: blur(10px) !important; /* Safari support */
+
   border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Subtle border */
   border-radius: 15px !important; /* Rounded corners */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important; /* Soft shadow */
@@ -200,7 +199,7 @@ header h1 {
   display: flex; /* Enables flexbox for centering */
   align-items: center; /* Vertically centers the image */
   justify-content: center; /* Horizontally centers the image */
-  backdrop-filter: blur(10px); /* Enhances glassmorphism effect */
+
 }
 
 .card-image img {
