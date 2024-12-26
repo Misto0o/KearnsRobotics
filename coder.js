@@ -48,17 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 30);
   }
 }),
-
-// Toggle the navigation menu
-function toggleNav() {
-    const navLinks = document.getElementById('nav-links');
-    const menuToggle = document.querySelector('.navbar-burger');
-    
-    // Toggle the 'is-active' class to open/close the menu
-    navLinks.classList.toggle('is-active');
-    menuToggle.classList.toggle('is-active');
-}
-
 // Smooth scroll for links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -70,6 +59,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Call animations on page load (AOS Init)
+document.addEventListener("DOMContentLoaded", () => {
+    AOS.init(); // Initialize AOS (animation on scroll)
+});
 
 // Function to adjust layout based on screen size
 function checkScreenSize() {
@@ -79,12 +72,14 @@ function checkScreenSize() {
     // Adjust layout styles based on screen width
     navLinks.style.flexDirection = isMobile ? "column" : "row";
 }
-const slider = document.querySelector('.slider');
 
-function activate(e) {
-  const items = document.querySelectorAll('.item');
-  e.target.matches('.next') && slider.append(items[0])
-  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+// Call the function on page load and on window resize
+window.addEventListener("load", checkScreenSize);
+window.addEventListener("resize", checkScreenSize);
+
+if (window.innerWidth <= 768) {
+    // Disable or adjust smooth scrolling on mobile for better performance
+    document.documentElement.style.scrollBehavior = 'auto'; // Reset smooth scrolling if needed
+} else {
+    document.documentElement.style.scrollBehavior = 'smooth';
 }
-
-document.addEventListener('click',activate,false);

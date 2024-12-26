@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Kearns Robotics" />
@@ -20,11 +20,10 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="navbar" id="header" data-aos="fade-in" data-aos-duration="450">
+    <header class="navbar" id="header" data-aos="fade-down" data-aos-duration="450">
         <div class="container">
             <div class="navbar-brand">
-                <h1 class="navbar-item">
-                    Welcome to Kearns Robotics!</h1>
+                <h1 data-aos="zoom-in" data-aos-duration="600">Kearns Robotics!</h1>
                 <button class="navbar-burger" aria-label="Toggle Navigation" onclick="toggleNav()">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -33,11 +32,11 @@
             </div>
             <div id="nav-links" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="about.html">About</a>
-                    <a class="navbar-item" href="sponso.html">Sponsorships</a>
-                    <a class="navbar-item" href="team.html">Team</a>
-                    <a class="navbar-item" href="mechloader/hammer.html">Mechanical</a>
-                    <a class="navbar-item" href="coders.html">Coders</a>
+                    <a class="navbar-item" href="index.html" data-aos="fade-up" data-aos-delay="100">Home</a>
+                    <a class="navbar-item" href="about.html" data-aos="fade-up" data-aos-delay="500">About</a>
+                    <a class="navbar-item" href="team.html" data-aos="fade-up" data-aos-delay="300">Team</a>
+                    <a class="navbar-item" href="sponso.html" data-aos="fade-up" data-aos-delay="200">Sponsorships</a>
+                    <a class="navbar-item" href="mechloader/hammer.html" data-aos="fade-up" data-aos-delay="400">Mechanical</a>
                 </div>
             </div>
         </div>
@@ -47,27 +46,18 @@
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-1 futuristic-text">Welcome to the Future of Coding</h1>
-                <p class="subtitle is-5">Meet the team that shapes technology</p>
+                <h2 data-value="WELCOME TO THE FUTURE OF CODING">WELCOME TO THE FUTURE OF CODING</h2>
+                <p class="subtitle is-5">Meet the coder team of passionate coders behind the robots.</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section glass-section">
-        <div class="container">
-            <h2 data-value="ABOUT US">ABOUT US</h2>
-            <p class="content">We are a team of passionate developers, designers, and engineers dedicated to innovation and excellence in robotics, web development, and software solutions.</p>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="section">
+    <section id="team" class="section glass-section">
         <div class="container">
             <div class="columns is-multiline">
                 <!-- Team Member Card -->
                 <div class="column is-one-quarter" data-aos="zoom-in">
-                    <div class="card">
+                    <div class="card glass-card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="teamimg/kingmode.png" alt="Kingston">
@@ -80,10 +70,10 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Repeat for other members -->
+    
+                <!-- Kristian -->
                 <div class="column is-one-quarter" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card">
+                    <div class="card glass-card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="teamimg/Kris.png" alt="Kristian">
@@ -96,9 +86,10 @@
                         </div>
                     </div>
                 </div>
-
+    
+                <!-- Xander -->
                 <div class="column is-one-quarter" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="card">
+                    <div class="card glass-card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="teamimg/XanXann.png" alt="Xander">
@@ -111,9 +102,10 @@
                         </div>
                     </div>
                 </div>
-
+    
+                <!-- Samuel -->
                 <div class="column is-one-quarter" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="card">
+                    <div class="card glass-card">
                         <div class="card-image">
                             <figure class="image is-square">
                                 <img src="teamimg/Sam.png" alt="Samuel">
@@ -129,26 +121,52 @@
             </div>
         </div>
     </section>
+    
     <!-- Project Showcase Section -->
     <section id="projects" class="section glass-section">
         <div class="container">
-            <h2 class="title is-3 futuristic-text">Our Projects</h2>
+            <h2 class="title is-3 futuristic-text">Our Code Snippets</h2>
             <div class="columns is-multiline">
                 <!-- Project Card -->
                 <div class="column is-one-third">
                     <div class="card glass-card">
-                        <div class="card-image">
+                        <div class="project-image">
                             <figure class="image is-16by9">
-                                <img src="projects/project1.png" alt="Project 1">
+                                <img src="imgs/code1.png" alt="Project 1">
                             </figure>
                         </div>
                         <div class="card-content">
-                            <h3 class="title is-5">Project Name</h3>
-                            <p>Description of the project showcasing its features and importance.</p>
+                            <h3 class="title is-5">Gamepad</h3>
+                            <p>This code checks for specific button inputs (a, b, x, y) from a gamepad controller (e.g., Logitech or Xbox controller). It then performs actions on servos and motors based on the button pressed.</p>
                         </div>
                     </div>
                 </div>
-                <!-- Repeat similar cards for other projects -->
+                <div class="column is-one-third">
+                    <div class="card glass-card">
+                        <div class="project-image">
+                            <figure class="image is-16by9">
+                                <img src="imgs/code2.png" alt="Project 1">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-5">Hardware Mapping</h3>
+                            <p>This initializes the robot's hardware by mapping variables in code to the corresponding hardware configurations on the control hub.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card glass-card">
+                        <div class="project-image">
+                            <figure class="image is-16by9">
+                                <img src="imgs/code3.png" alt="Project 1">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="title is-5">Improved Gamepad Handling</h3>
+                            <p>This snippet adjusts the positions of the servos (servo2 and servo3) based on the gamepad buttons with a more structured approach. Button Actions:</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -158,5 +176,13 @@
     <script>
         AOS.init();
     </script>
+    <script>
+  function toggleNav() {
+      const navLinks = document.getElementById('nav-links');
+      const menuToggle = document.querySelector('.navbar-burger');
+      navLinks.classList.toggle('is-active');
+      menuToggle.classList.toggle('is-active');
+  }
+</script>
 </body>
 </html>
